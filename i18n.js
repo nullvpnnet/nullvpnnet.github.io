@@ -266,9 +266,11 @@
   // ENGINE
   // ─────────────────────────────────────────────────────────────────────────────
   function getLang() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && T['nav.home'][saved]) return saved;
-    const browser = navigator.language.slice(0, 2).toLowerCase();
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && T['nav.home'][saved]) return saved;
+    } catch (_) { /* localStorage unavailable (e.g. TON Web3 / private mode) */ }
+    const browser = (navigator.language || '').slice(0, 2).toLowerCase();
     if (T['nav.home'][browser]) return browser;
     return DEFAULT_LANG;
   }
@@ -277,7 +279,7 @@
     const isRTL = RTL_LANGS.includes(lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-    localStorage.setItem(STORAGE_KEY, lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* ignore */ }
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
