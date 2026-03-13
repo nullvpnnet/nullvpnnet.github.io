@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="How NullVPN works — why it's different from consumer VPNs, how it bypasses Deep Packet Inspection, and how to get connected in 60 seconds."/>
+  <title>How It Works — NullVPN</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .unblock-section{padding:64px 0;background:var(--bg-card)}
+    .unblock-section h2{text-align:center;margin-bottom:12px}
+    .unblock-section .lead{text-align:center;color:var(--text-muted);max-width:600px;margin:0 auto 36px}
+    .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto}
+    @media(max-width:600px){.method-grid{grid-template-columns:1fr}}
+    .method-card{border:1px solid var(--border);border-radius:12px;padding:28px 24px;background:var(--bg)}
+    .method-card.featured{border-color:var(--accent);background:rgba(99,102,241,.07)}
+    .method-card h3{font-size:1rem;margin-bottom:14px}
+    .method-card ul{padding-left:18px;color:var(--text-muted);font-size:.93rem;line-height:1.7}
+    .method-card .verdict{margin-top:14px;font-size:.88rem;padding:8px 12px;border-radius:7px;background:rgba(255,255,255,.04)}
+    .method-card.featured .verdict{color:var(--accent)}
+    .analogy-box{max-width:680px;margin:40px auto 0;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:28px 32px}
+    .analogy-box h3{margin-bottom:14px;font-size:1rem}
+    .analogy-box p{color:var(--text-muted);font-size:.95rem;line-height:1.65;margin-bottom:10px}
+    .port-insight{max-width:680px;margin:28px auto 0;background:rgba(99,102,241,.09);border:1.5px solid var(--accent);border-radius:12px;padding:24px 28px;text-align:center}
+    .port-insight h4{margin-bottom:10px}
+    .port-insight p{color:var(--text-muted);font-size:.93rem;line-height:1.6}
+    .flow-section{padding:64px 0;background:var(--bg)}
+    .flow-section h2{text-align:center;margin-bottom:36px}
+    .flow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;max-width:860px;margin:0 auto;position:relative}
+    .flow-step{text-align:center;padding:24px 16px;position:relative}
+    .flow-step:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--accent)}
+    @media(max-width:640px){.flow-step:not(:last-child)::after{display:none}}
+    .flow-icon{font-size:2rem;margin-bottom:10px}
+    .flow-step h4{font-size:.9rem;margin-bottom:6px}
+    .flow-step p{font-size:.82rem;color:var(--text-muted)}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Null<span>VPN</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+        <li><a href="how-it-works.html" class="active" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <a href="pricing.html" class="btn-primary nav-cta" data-i18n="nav.cta">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-i18n="how.h1a">Not a regular VPN.</span><br/><span data-i18n="how.h1b">A connection firewalls can't see.</span></h1>
+      <p data-i18n="how.sub">Up and running in 60 seconds. Here's how the technology actually works — and why it succeeds where other VPNs fail.</p>
+    </div>
+  </section>
+
+  <section class="unblock-section">
+    <div class="container">
+      <h2 data-i18n="how.unblock.h">Why NullVPN Works Where Others Fail</h2>
+      <p class="lead" data-i18n="how.unblock.lead">Most VPNs use protocols that Deep Packet Inspection systems can detect and block within hours. NullVPN uses a fundamentally different approach.</p>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>❌ Regular VPNs</h3>
+          <ul>
+            <li>Use detectable protocols (OpenVPN, IKEv2, WireGuard)</li>
+            <li>Run on predictable, blockable ports</li>
+            <li>Leave recognisable traffic fingerprints</li>
+            <li>IP ranges publicly listed — continuously blocklisted</li>
+            <li>Require app store installation</li>
+          </ul>
+          <p class="verdict">Result: Blocked in Iran, Russia, China within days</p>
+        </div>
+        <div class="method-card featured">
+          <h3>✅ NullVPN</h3>
+          <ul>
+            <li>Routes through the same port every bank uses</li>
+            <li>Traffic appears identical to HTTPS web browsing</li>
+            <li>Zero detectable VPN fingerprint</li>
+            <li>Multiple independent encryption layers</li>
+            <li>Auto-failover if primary route is blocked</li>
+            <li>No app store required — direct APK</li>
+          </ul>
+          <p class="verdict">✅ Works through corporate firewalls, national blocks, hotel Wi-Fi</p>
+        </div>
+      </div>
+
+      <div class="analogy-box">
+        <h3>The Simple Analogy</h3>
+        <p><strong>Regular VPNs</strong> are like driving a car with "VPN TRAFFIC" painted on the roof. Traffic inspection systems spot you instantly and block you.</p>
+        <p><strong>NullVPN</strong> looks exactly like the millions of ordinary encrypted web requests passing through the same port every bank and secure site uses — banking apps, email, shopping, video calls. There is nothing to distinguish it. Firewalls cannot block it without breaking the internet for everyone.</p>
+      </div>
+
+      <div class="port-insight">
+        <h4>Why This Port Is Unblockable</h4>
+        <p>The same port that handles every secure website on the internet — banking, government portals, healthcare, e-commerce. No state actor, no matter how aggressive, can block it without destroying their own digital infrastructure. That's why NullVPN routes through it — and why it keeps working when everything else is blocked.</p>
+      </div>
+
+      <div class="tech-bullets" style="margin-top:2rem;">
+        <h4 data-i18n="tech.h">Technology at a glance</h4>
+        <ul class="tech-list">
+          <li data-i18n="tech.1">Routes through the same port every bank or government institution uses</li>
+          <li data-i18n="tech.2">Zero traffic fingerprint — we do not disclose additional details, to resist censorship and tampering of our services</li>
+          <li data-i18n="tech.3">Multiple independent military-grade encryption layers</li>
+          <li data-i18n="tech.4">Auto-failover — seamless backup routing</li>
+          <li data-i18n="tech.5">Dedicated private server — only your traffic, ever</li>
+          <li data-i18n="tech.6">No activity logs by architecture, not just policy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow-section">
+    <div class="container">
+      <h2 data-i18n="how.flow.h">What happens behind the scenes</h2>
+      <div class="flow-grid">
+        <div class="flow-step"><div class="flow-icon">💎</div><h4>You pay with TON</h4><p>Anonymous crypto payment. No identity check. Processed in seconds.</p></div>
+        <div class="flow-step"><div class="flow-icon">⚡</div><h4>Auto-provisioned</h4><p>System generates your personal connection instantly. No human involved.</p></div>
+        <div class="flow-step"><div class="flow-icon">🔗</div><h4>One link sent</h4><p>You receive a single activation link via Telegram bot.</p></div>
+        <div class="flow-step"><div class="flow-icon">📲</div><h4>Tap to install</h4><p>APK installs, configures itself silently. No settings needed.</p></div>
+        <div class="flow-step"><div class="flow-icon">🟢</div><h4>Connected</h4><p>Tap Connect. Traffic routes through the same port banks and secure sites use. Invisible to firewalls.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:36px" data-i18n="how.steps.h">3 steps. 60 seconds.</h2>
+      <div class="steps-list">
+        <div class="step"><div class="step-number">01</div><div class="step-content"><h2 data-i18n="how.s1.h">Choose a plan</h2><p data-i18n="how.s1.p">Visit our pricing page or open our Telegram bot. Select monthly, quarterly, or annual. No account creation needed — no email, no name.</p></div></div>
+        <div class="step"><div class="step-number">02</div><div class="step-content"><h2 data-i18n="how.s2.h">Pay privately with TON</h2><p data-i18n="how.s2.p">Complete payment using TON or USDT from any crypto wallet. Processed automatically in seconds. No waiting, no identity check, no approval required.</p></div></div>
+        <div class="step"><div class="step-number">03</div><div class="step-content"><h2 data-i18n="how.s3.h">Tap Connect — you're done</h2><p data-i18n="how.s3.p">Receive your personal activation link. Tap it — the app downloads, installs, and configures itself automatically. One tap Connect button. That's it.</p></div></div>
+      </div>
+
+      <div class="hiw-note"><h3 data-i18n="how.note1.h">🔒 What happens to your data?</h3><p data-i18n="how.note1.p">Nothing is stored. Your connection is prepared and delivered automatically. No human sees your payment or usage. No activity log is ever created — not just deleted later, never created at all.</p></div>
+      <div class="hiw-note"><h3 data-i18n="how.note2.h">📱 Which devices are supported?</h3><p data-i18n="how.note2.p">Android fully supported with our dedicated app — direct APK, no app store required. iOS, Windows, Mac, and Linux users connect via any compatible VPN client — full instructions provided after purchase.</p></div>
+      <div class="hiw-note"><h3 data-i18n="how.note3.h">🔄 What if the connection gets blocked?</h3><p data-i18n="how.note3.p">NullVPN automatically switches to a secondary route within seconds. You stay connected — you never notice it happened. If you experience any issues, message <a href="https://t.me/nullvpnnet" target="_blank" rel="noopener">@nullvpnnet</a> on Telegram.</p></div>
+      <div class="hiw-note"><h3 data-i18n="how.note4.h">🌐 What if this website is blocked?</h3><p data-i18n="how.note4.p">Reach us via <a href="https://t.me/nullvpnnetbot" target="_blank" rel="noopener">@nullvpnnetbot</a> on Telegram or at <a href="https://nullvpn.ton.run" target="_blank" rel="noopener">nullvpn.ton.run</a> — works in any browser, no special software needed.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-banner"><div class="container">
+    <h2 data-i18n="how.cta.h">Ready to connect?</h2>
+    <p data-i18n="how.cta.p">From $5/month. Cancel anytime. Works in 60 seconds.</p>
+    <a href="pricing.html" class="btn-primary btn-large" data-i18n="how.cta.btn">See Pricing →</a>
+    <p class="cta-small"><a href="comparison.html" data-i18n="how.cta.small">See how NullVPN compares to NordVPN, ExpressVPN, ProtonVPN →</a></p>
+  </div></section>
+
+  <footer class="footer"><div class="container footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo">Null<span>VPN</span></a><p data-i18n="footer.tagline">Private internet for everyone.</p></div>
+    <div class="footer-nav"><ul>
+      <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+      <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+      <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="privacy.html" data-i18n="footer.privacy">Privacy</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul></div>
+  </div><div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN</p></div></footer>
+  <script src="i18n.js?v=2"></script>
+</body>
+</html>
