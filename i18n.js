@@ -31,6 +31,7 @@
     'nav.whynull':      { en:'Why NullVPN',  ru:'Почему NullVPN', fa:'چرا NullVPN', hi:'NullVPN क्यों', ne:'NullVPN किन', zh:'为何选择NullVPN' },
     'nav.cta':          { en:'Get Started',  ru:'Начать',     fa:'شروع کنید', hi:'शुरू करें',   ne:'सुरू गर्नुहोस्', zh:'立即开始' },
     'nav.cta.buy':      { en:'Buy via Telegram', ru:'Купить в Telegram', fa:'خرید از تلگرام', hi:'टेलीग्राम से खरीदें', ne:'टेलिग्रामबाट किन्नुहोस्', zh:'通过Telegram购买' },
+    'nav.download':     { en:'Download NullVPN App', ru:'Скачать приложение NullVPN', fa:'دانلود برنامه NullVPN', hi:'NullVPN ऐप डाउनलोड करें', ne:'NullVPN एप डाउनलोड गर्नुहोस्', zh:'下载 NullVPN 应用' },
 
     // ── INDEX ────────────────────────────────────────────────────────────────
     'index.badge':       { en:'✦ Not a regular VPN — something firewalls can\'t see', ru:'✦ Не обычный VPN — то, что файрволы не видят', fa:'✦ VPN معمولی نیست — چیزی که فایروال‌ها نمی‌بینند', hi:'✦ नियमित VPN नहीं — फायरवॉल कुछ नहीं देख सकते', ne:'✦ नियमित VPN होइन — फायरवलले देख्न सक्दैनन्', zh:'✦ 不是普通VPN — 防火墙无法识别' },

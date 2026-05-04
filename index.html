@@ -10,6 +10,10 @@
 <body>
   <nav class="navbar">
     <div class="nav-inner">
+      <div class="top-buttons" style="display:flex;gap:1rem;width:100%;margin-bottom:0.5rem;">
+        <a href="https://nullvpn.net/app-download" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.download">Download NullVPN App</a>
+        <a href="https://nullvpn.net/tg-bot" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.cta.buy">Buy via Telegram</a>
+      </div>
       <a href="index.html" class="logo">Null<span>VPN</span></a>
       <ul class="nav-links">
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
@@ -19,6 +23,10 @@
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
+      <div class="theme-toggle">
+        <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
+        <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+      </div>
       <a href="pricing.html" class="btn-primary nav-cta" data-i18n="nav.cta">Get Started</a>
     </div>
   </nav>
