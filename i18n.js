@@ -310,7 +310,24 @@
     applyLang(lang);
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
-    applyLang(getLang());
-  });
+  // Run immediately when script loads (not waiting for DOMContentLoaded)
+  // This ensures translations are applied even on cached pages or rapid navigation
+  (function() {
+    let lang = DEFAULT_LANG;
+    // Priority: 1) URL parameter, 2) localStorage, 3) default
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      if (urlLang && T['nav.home'][urlLang]) {
+        lang = urlLang;
+      } else {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved && T['nav.home'][saved]) {
+          lang = saved;
+        }
+      }
+    } catch (_) { /* ignore errors in private mode */ }
+    if (!T['nav.home'][lang]) lang = DEFAULT_LANG;
+    applyLang(lang);
+  })();
 })();
