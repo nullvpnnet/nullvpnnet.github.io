@@ -26,8 +26,10 @@
             <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
             <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
             <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
-            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ar')" title="العربية">ع</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Español">ES</button>
             <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
           </div>
           <div class="theme-toggle">
             <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
@@ -46,15 +48,11 @@
     </div>
   </nav>
 
-  <!-- Social Proof Strip -->
+  <!-- Social Proof Strip — heading only, NO duplicate flags here -->
   <section class="social-proof">
     <div class="container">
       <h2 class="sp-heading" data-i18n="index.diff.h">NullVPN is different.</h2>
       <p class="sp-tagline" data-i18n="index.sp.tagline">Built for users in the world's most restricted networks</p>
-      <div class="country-flags">
-        <span>🇨🇳 China</span><span>🇮🇷 Iran</span><span>🇷🇺 Russia</span>
-        <span>🇧🇾 Belarus</span><span>🇳🇵 Nepal</span><span>🇹🇲 Turkmenistan</span>
-      </div>
     </div>
   </section>
 
@@ -77,6 +75,7 @@
           <div class="feat-icon">💳</div>
           <h3 data-i18n="index.f3.h">Free trial. Pay with fiat or crypto.</h3>
           <p data-i18n="index.f3.p">No bank card required. No name. No transaction history linked to you. Pay with fiat or crypto from any wallet in seconds.</p>
+          <p class="feat-payment" data-i18n="index.payment">Pay with crypto (TON, USDT, etc.) or fiat — rubles.</p>
         </div>
         <div class="feat-card">
           <div class="feat-icon">📱</div>
@@ -107,12 +106,40 @@
     </div>
   </section>
 
+  <!-- Countries Section — bottom of page, before footer -->
+  <section class="countries-section">
+    <div class="container" style="text-align:center">
+      <h2 data-i18n="index.countries.h">Works in the world's most restricted countries.</h2>
+      <p class="sp-tagline" data-i18n="index.countries.tagline">If your country is on this list — NullVPN was built for you.</p>
+      <div class="country-flags">
+        <span>🇨🇳 China</span>
+        <span>🇮🇷 Iran</span>
+        <span>🇷🇺 Russia</span>
+        <span>🇧🇾 Belarus</span>
+        <span>🇳🇵 Nepal</span>
+        <span>🇹🇲 Turkmenistan</span>
+        <span>🇰🇵 North Korea</span>
+        <span>🇸🇾 Syria</span>
+        <span>🇨🇺 Cuba</span>
+        <span>🇲🇲 Myanmar</span>
+        <span>🇹🇷 Turkey</span>
+        <span>🇻🇿 Venezuela</span>
+        <span>🇸🇦 Saudi Arabia</span>
+        <span>🇦🇪 UAE</span>
+        <span>🇵🇰 Pakistan</span>
+        <span>🇺🇿 Uzbekistan</span>
+        <span>🇻🇳 Vietnam</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="index.html" class="logo">Null<span>VPN</span></a>
         <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
+        <p class="footer-payment-line" data-i18n="footer.payment">Payments: crypto (TON, USDT, etc.) · fiat — rubles</p>
         <div class="footer-links-social">
           <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
           <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
@@ -143,7 +170,7 @@
     </div>
   </footer>
 
-  <script src="i18n.js?v=2"></script>
+  <script src="i18n.js?v=3"></script>
   <script>
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
