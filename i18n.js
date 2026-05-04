@@ -310,7 +310,7 @@
     applyLang(lang);
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
-    applyLang(getLang());
-  });
+  // Apply translations IMMEDIATELY when script loads (not waiting for DOMContentLoaded)
+  // This prevents flash of untranslated content or raw translation keys
+  applyLang(getLang());
 })();
