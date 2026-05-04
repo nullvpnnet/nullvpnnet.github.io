@@ -6,86 +6,155 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="description" content="NullVPN pricing — $5/month, $12/quarter, $40/year. Pay with TON crypto. No registration required."/>
+  <meta name="description" content="NullVPN pricing — from $5/month. TON crypto payments only. No account required."/>
   <title>Pricing — NullVPN</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-inner">
-      <div class="top-buttons" style="display:flex;gap:1rem;width:100%;margin-bottom:0.5rem;">
-        <a href="https://nullvpn.net/app-download" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.download">Download NullVPN App</a>
-        <a href="https://nullvpn.net/tg-bot" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.cta.buy">Buy via Telegram</a>
-      </div>
-      <a href="index.html" class="logo">Null<span>VPN</span></a>
-      
       <div class="nav-top-row">
-        <a href="https://nullvpn.net/app-download" class="btn-nav" data-i18n="nav.download">Download App</a>
-        <a href="https://nullvpn.net/tg-bot" class="btn-nav btn-primary" data-i18n="nav.cta.buy">Buy Premium</a>
-        
-        <div class="lang-selector">
-          <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
-          <button class="lang-btn" onclick="setLang('ru')" title="Русский">RU</button>
-          <button class="lang-btn" onclick="setLang('fa')" title="فارسی">FA</button>
-          <button class="lang-btn" onclick="setLang('zh')" title="中文">ZH</button>
-          <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">NE</button>
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <div class="nav-actions">
+          <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.download">Download App</a>
+          <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" class="btn-nav-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
         </div>
-        
-        <div class="theme-toggle">
-          <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
-          <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+        <div class="nav-controls">
+          <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
+          </div>
+          <div class="theme-toggle">
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">🌙</button>
+          </div>
         </div>
       </div>
-      
-      <ul class="nav-links nav-second-row">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <ul class="nav-links">
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
         <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
         <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
-        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="pricing.html" class="active" data-i18n="nav.pricing">Pricing</a></li>
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </nav>
-  <section class="page-hero"><div class="container"><h1><span data-i18n="price.h1a">Simple, honest</span><br/><span data-i18n="price.h1b">pricing.</span></h1><p data-i18n="price.sub">One plan. Everything included. Pay with TON crypto. No surprises.</p></div></section>
-  <section class="pricing-section">
+
+  <section class="page-hero">
     <div class="container">
-      <div class="pricing-grid">
-        <div class="pricing-card"><h3 data-i18n="price.monthly">Monthly</h3><div class="price">$5<span>/mo</span></div><p class="price-note" data-i18n="price.billed.mo">Billed monthly</p><ul class="pricing-features"><li data-i18n="price.f1">✓ Full unrestricted access</li><li data-i18n="price.f2">✓ All devices supported</li><li data-i18n="price.f3">✓ Zero logs, ever</li><li data-i18n="price.f4">✓ Works in Iran, Russia, China</li><li data-i18n="price.f5">✓ TON crypto payment</li><li data-i18n="price.f6">✓ Instant delivery</li><li data-i18n="price.f7">✓ Up to 3 devices</li></ul><a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" class="btn-outline btn-full" data-i18n="price.btn.mo">Get Monthly →</a></div>
-        <div class="pricing-card featured"><div class="popular-badge" data-i18n="price.popular">Most Popular</div><h3 data-i18n="price.quarterly">Quarterly</h3><div class="price">$12<span>/3mo</span></div><p class="price-note" data-i18n="price.save3">Save $3 vs monthly</p><ul class="pricing-features"><li data-i18n="price.f1">✓ Full unrestricted access</li><li data-i18n="price.f2">✓ All devices supported</li><li data-i18n="price.f3">✓ Zero logs, ever</li><li data-i18n="price.f4">✓ Works in Iran, Russia, China</li><li data-i18n="price.f5">✓ TON crypto payment</li><li data-i18n="price.f6">✓ Instant delivery</li><li data-i18n="price.f7">✓ Up to 3 devices</li><li data-i18n="price.f8">✓ Priority support</li></ul><a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" class="btn-primary btn-full" data-i18n="price.btn.qt">Get Quarterly →</a></div>
-        <div class="pricing-card"><h3 data-i18n="price.annual">Annual</h3><div class="price">$40<span>/yr</span></div><p class="price-note" data-i18n="price.save20">Save $20 vs monthly</p><ul class="pricing-features"><li data-i18n="price.f1">✓ Full unrestricted access</li><li data-i18n="price.f2">✓ All devices supported</li><li data-i18n="price.f3">✓ Zero logs, ever</li><li data-i18n="price.f4">✓ Works in Iran, Russia, China</li><li data-i18n="price.f5">✓ TON crypto payment</li><li data-i18n="price.f6">✓ Instant delivery</li><li data-i18n="price.f7">✓ Up to 3 devices</li><li data-i18n="price.f8">✓ Priority support</li><li data-i18n="price.f9">✓ Best value</li></ul><a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" class="btn-outline btn-full" data-i18n="price.btn.an">Get Annual →</a></div>
-      </div>
-      <div class="pricing-note"><h3 data-i18n="price.pay.h">How to pay</h3><p data-i18n="price.pay.p">All plans are paid using <strong>TON cryptocurrency</strong>. Use Tonkeeper, MyTonWallet, or any TON wallet. Payment is instant and fully automated — you'll receive connection details immediately after confirmation.</p><p data-i18n="price.pay.p2">Don't have TON? Buy it on Binance, OKX, Bybit, or swap directly inside Tonkeeper or Telegram Wallet — no registration needed.</p></div>
-      <div class="pricing-note"><h3 data-i18n="price.refund.h">Refund policy</h3><p data-i18n="price.refund.p">If NullVPN does not work in your location within 48 hours of purchase, contact us on Telegram for a full refund. No questions asked.</p></div>
+      <h1><span data-i18n="price.h1a">Simple pricing.</span><br/><span data-i18n="price.h1b">No surprises.</span></h1>
+      <p data-i18n="price.sub">Pay once. Get instant access. No subscription traps. No identity required.</p>
     </div>
   </section>
-  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><a href="index.html" class="logo">Null<span>VPN</span></a><p data-i18n="footer.tagline">Private internet for everyone.</p></div><div class="footer-nav"><ul><li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li><li><a href="privacy.html" data-i18n="footer.privacy">Privacy</a></li><li><a href="contact.html" data-i18n="nav.contact">Contact</a></li></ul></div></div><div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN</p></div></footer>
+
+  <section class="pricing-section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:32px;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700" data-i18n="price.h">Choose your plan</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 data-i18n="price.p1.name">Monthly</h3>
+          <div class="price">$5<span data-i18n="price.permon">/mo</span></div>
+          <p class="price-note" data-i18n="price.p1.note">Billed monthly in TON or USDT</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+          </ul>
+          <a href="https://nullvpn.net/tg-bot" class="btn-outline btn-full" target="_blank" rel="noopener" data-i18n="price.cta.get">Get via Telegram →</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="popular-badge" data-i18n="price.popular">Most Popular</div>
+          <h3 data-i18n="price.p3.name">Quarterly</h3>
+          <div class="price">$12<span data-i18n="price.perqtr">/3 mo</span></div>
+          <p class="price-note" data-i18n="price.p3.note">$4/month — save 20%</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+            <li data-i18n="price.feat.7">✔ Priority Telegram support</li>
+          </ul>
+          <a href="https://nullvpn.net/tg-bot" class="btn-primary btn-full" target="_blank" rel="noopener" data-i18n="price.cta.get">Get via Telegram →</a>
+        </div>
+        <div class="pricing-card">
+          <h3 data-i18n="price.p4.name">Annual</h3>
+          <div class="price">$40<span data-i18n="price.peryear">/year</span></div>
+          <p class="price-note" data-i18n="price.p4.note">$3.33/month — save 33%</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+            <li data-i18n="price.feat.7">✔ Priority Telegram support</li>
+          </ul>
+          <a href="https://nullvpn.net/tg-bot" class="btn-outline btn-full" target="_blank" rel="noopener" data-i18n="price.cta.get">Get via Telegram →</a>
+        </div>
+      </div>
+      <div class="pricing-note">
+        <h3 data-i18n="price.howpay.h">How payment works</h3>
+        <p data-i18n="price.howpay.p1">Open our Telegram Bot and choose your plan. You’ll receive a TON wallet address. Send the exact amount (TON or USDT). Your connection is provisioned automatically within seconds. No wait, no human involved.</p>
+        <p data-i18n="price.howpay.p2">No email. No account. No personal information. Fully anonymous.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2 data-i18n="price.cta.h">Start in 60 seconds</h2>
+      <p data-i18n="price.cta.p">Open Telegram Bot, pay, connect. That’s it.</p>
+      <a href="https://nullvpn.net/tg-bot" class="btn-primary btn-large" target="_blank" rel="noopener" data-i18n="price.cta.btn">Open Telegram Bot →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
+        <div class="footer-links-social">
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+          <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p></div>
+  </footer>
 
   <script src="i18n.js?v=2"></script>
   <script>
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      updateThemeButtons(theme);
-    }
-    
-    function updateThemeButtons(theme) {
-      document.getElementById('themeLight').classList.remove('active');
-      document.getElementById('themeDark').classList.remove('active');
-      if (theme === 'light') {
-        document.getElementById('themeLight').classList.add('active');
-      } else {
-        document.getElementById('themeDark').classList.add('active');
-      }
-    }
-    
-    // Initialize theme on page load
-    (function() {
-      var savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeButtons(savedTheme);
-    })();
+    function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');}
+    (function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');})();
   </script>
 </body>
 </html>
