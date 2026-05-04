@@ -30,8 +30,9 @@
     'nav.compare':      { en:'Compare',      ru:'Сравнение',  fa:'مقایسه',    hi:'तुलना',      ne:'तुलना',       zh:'对比' },
     'nav.whynull':      { en:'Why NullVPN',  ru:'Почему NullVPN', fa:'چرا NullVPN', hi:'NullVPN क्यों', ne:'NullVPN किन', zh:'为何选择NullVPN' },
     'nav.cta':          { en:'Get Started',  ru:'Начать',     fa:'شروع کنید', hi:'शुरू करें',   ne:'सुरू गर्नुहोस्', zh:'立即开始' },
-    'nav.cta.buy':      { en:'Buy via Telegram', ru:'Купить в Telegram', fa:'خرید از تلگرام', hi:'टेलीग्राम से खरीदें', ne:'टेलिग्रामबाट किन्नुहोस्', zh:'通过Telegram购买' },
-    'nav.download':     { en:'Download NullVPN App', ru:'Скачать приложение NullVPN', fa:'دانلود برنامه NullVPN', hi:'NullVPN ऐप डाउनलोड करें', ne:'NullVPN एप डाउनलोड गर्नुहोस्', zh:'下载 NullVPN 应用' },
+    'nav.download':     { en:'Download App', ru:'Скачать приложение', fa:'دانلود برنامه', hi:'ऐप डाउनलोड करें', ne:'एप डाउनलोड गर्नुहोस्', zh:'下载应用' },
+    'nav.cta.buy':      { en:'Buy Premium', ru:'Купить подписку', fa:'خرید اشتراک', hi:'प्रीमियम खरीदें', ne:'प्रीमियम किन्नुहोस्', zh:'购买高级版' },
+
 
     // ── INDEX ────────────────────────────────────────────────────────────────
     'index.badge':       { en:'✦ Not a regular VPN — something firewalls can\'t see', ru:'✦ Не обычный VPN — то, что файрволы не видят', fa:'✦ VPN معمولی نیست — چیزی که فایروال‌ها نمی‌بینند', hi:'✦ नियमित VPN नहीं — फायरवॉल कुछ नहीं देख सकते', ne:'✦ नियमित VPN होइन — फायरवलले देख्न सक्दैनन्', zh:'✦ 不是普通VPN — 防火墙无法识别' },
@@ -295,31 +296,21 @@
 
     // update selector active state
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+      btn.classList.toggle('active', btn.textContent.toLowerCase() === lang.toUpperCase() || 
+                                   (lang === 'fa' && btn.textContent === 'FA') ||
+                                   (lang === 'zh' && btn.textContent === 'ZH') ||
+                                   (lang === 'ru' && btn.textContent === 'RU') ||
+                                   (lang === 'ne' && btn.textContent === 'NE') ||
+                                   (lang === 'en' && btn.textContent === 'EN'));
     });
   }
 
-  function buildSelector() {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'lang-selector';
-
-    Object.entries(LANGS).forEach(([code, meta]) => {
-      const btn = document.createElement('button');
-      btn.className = 'lang-btn';
-      btn.dataset.lang = code;
-      btn.title = meta.name;
-      btn.textContent = meta.label;
-      btn.addEventListener('click', () => applyLang(code));
-      wrapper.appendChild(btn);
-    });
-
-    return wrapper;
-  }
+  // Expose setLang globally for inline onclick handlers
+  window.setLang = function(lang) {
+    applyLang(lang);
+  };
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Insert selector into every navbar .nav-inner
-    const navInner = document.querySelector('.nav-inner, nav .container');
-    if (navInner) navInner.appendChild(buildSelector());
     applyLang(getLang());
   });
 })();

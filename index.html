@@ -18,7 +18,30 @@
         <a href="https://nullvpn.net/tg-bot" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.cta.buy">Buy via Telegram</a>
       </div>
       <a href="index.html" class="logo">Null<span>VPN</span></a>
-      <ul class="nav-links">
+      
+      <!-- First row: Logo + Download + Buy + Language + Theme -->
+      <div class="nav-top-row">
+        <a href="https://nullvpn.net/app-download" class="btn-nav" data-i18n="nav.download">Download App</a>
+        <a href="https://nullvpn.net/tg-bot" class="btn-nav btn-primary" data-i18n="nav.cta.buy">Buy Premium</a>
+        
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+          <button class="lang-btn" onclick="setLang('ru')" title="Русский">RU</button>
+          <button class="lang-btn" onclick="setLang('fa')" title="فارسی">FA</button>
+          <button class="lang-btn" onclick="setLang('zh')" title="中文">ZH</button>
+          <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">NE</button>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+          <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
+          <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+        </div>
+      </div>
+      
+      <!-- Second row: Navigation links -->
+      <ul class="nav-links nav-second-row">
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
         <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
         <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
@@ -26,11 +49,6 @@
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <div class="theme-toggle">
-        <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
-        <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
-      </div>
-      <a href="pricing.html" class="btn-primary nav-cta" data-i18n="nav.cta">Get Started</a>
     </div>
   </nav>
 
@@ -63,18 +81,6 @@
     </div>
   </section>
 
-  <section class="problems">
-    <div class="container">
-      <h2 data-i18n="index.prob.h">Does this sound familiar?</h2>
-      <div class="problem-grid">
-        <div class="problem-card"><span class="problem-icon">📵</span><p data-i18n="index.prob1">Instagram, YouTube or Telegram is blocked in your country</p></div>
-        <div class="problem-card"><span class="problem-icon">🔁</span><p data-i18n="index.prob2">Your VPN works for a few days — then gets blocked again</p></div>
-        <div class="problem-card"><span class="problem-icon">😰</span><p data-i18n="index.prob3">You're worried about who can see what you do online</p></div>
-        <div class="problem-card"><span class="problem-icon">💸</span><p data-i18n="index.prob4">Other services require your personal info and a credit card</p></div>
-      </div>
-    </div>
-  </section>
-
   <section class="features-teaser">
     <div class="container">
       <h2 data-i18n="index.diff.h">NullVPN is different.</h2>
@@ -102,7 +108,6 @@
       <h2 data-i18n="index.cta.h">Stop playing VPN whack-a-mole.</h2>
       <p data-i18n="index.cta.p">Get a connection that actually works. From $5/month. Cancel anytime.</p>
       <a href="pricing.html" class="btn-primary btn-large" data-i18n="index.cta.btn">Get NullVPN →</a>
-      <p class="cta-small"><span data-i18n="index.cta.also">Also via</span> <a href="https://t.me/nullvpnnetbot" target="_blank" rel="noopener">Telegram Bot</a> · <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">Сайт в TON Network</a></p>
     </div>
   </section>
 
@@ -114,7 +119,6 @@
         <div class="footer-links-social">
           <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener">Telegram Channel</a>
           <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener">Telegram Bot</a>
-          <a href="https://nullvpn.net" target="_blank" rel="noopener">Web2</a>
           <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
         </div>
       </div>
