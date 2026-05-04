@@ -6,76 +6,54 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="description" content="NullVPN vs NordVPN, ExpressVPN, ProtonVPN, Mullvad — real-world comparison in Iran, Russia, China. See why consumer VPNs fail and NullVPN works."/>
-  <title>NullVPN vs Consumer VPNs — Real-World Comparison 2026</title>
+  <meta name="description" content="NullVPN vs NordVPN vs ExpressVPN vs ProtonVPN — honest comparison for users in restricted countries."/>
+  <title>Compare VPNs — NullVPN</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .comparison-hero{padding:80px 0 48px;text-align:center;background:var(--bg-card)}
-    .comparison-hero h1{font-size:2.4rem;margin-bottom:16px}
-    .comparison-hero .lead{font-size:1.15rem;color:var(--text-muted);max-width:640px;margin:0 auto}
-    .table-wrapper{overflow-x:auto;margin:40px 0}
-    .comparison-table{width:100%;border-collapse:collapse;min-width:720px}
-    .comparison-table th,.comparison-table td{padding:13px 16px;text-align:center;border-bottom:1px solid var(--border)}
-    .comparison-table th{background:var(--bg-card);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
-    .comparison-table td:first-child{text-align:left;font-weight:500}
-    .comparison-table th.highlight,.comparison-table td.highlight{background:rgba(99,102,241,.10);color:var(--accent);font-weight:700}
-    .comparison-table tr:hover td{background:rgba(255,255,255,.03)}
-    .table-notes{font-size:.82rem;color:var(--text-muted);margin-top:8px}
-    .failure-section{padding:64px 0;background:var(--bg)}
-    .failure-section h2{text-align:center;margin-bottom:36px}
-    .failure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-    .failure-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:28px 24px}
-    .failure-card h3{font-size:1rem;margin-bottom:10px;color:var(--accent)}
-    .solution-callout{background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:32px 36px;margin-top:40px;text-align:center}
-    .solution-callout h3{font-size:1.3rem;margin-bottom:12px}
-    .personas-section{padding:64px 0;background:var(--bg-card)}
-    .personas-section h2{text-align:center;margin-bottom:36px}
-    .persona-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-    .persona-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:28px 24px}
-    .persona-card h3{font-size:1rem;margin-bottom:10px}
-    .persona-card .solution{margin-top:12px;padding:10px 14px;background:rgba(99,102,241,.10);border-radius:8px;font-size:.9rem}
-    .not-vpn-section{padding:64px 0;background:var(--bg)}
-    .not-vpn-section h2{text-align:center;margin-bottom:16px}
-    .not-vpn-section .lead{text-align:center;color:var(--text-muted);max-width:640px;margin:0 auto 36px}
-    .ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .ladder-card{border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--bg-card)}
-    .ladder-card.featured{border-color:var(--accent);background:rgba(99,102,241,.08)}
-    .ladder-card h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:8px}
-    .ladder-card p{font-size:.95rem;line-height:1.5}
+    .comp-section{padding:64px 24px;}
+    .comp-table-wrap{overflow-x:auto;margin-top:32px;}
+    table{width:100%;border-collapse:collapse;font-size:.92rem;}
+    th{background:var(--bg3);color:var(--text);font-weight:700;padding:14px 16px;text-align:left;white-space:nowrap;}
+    th.highlight{background:var(--accent);color:#fff;}
+    td{padding:13px 16px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;}
+    td.highlight{background:rgba(16,185,129,.06);color:var(--text);font-weight:500;}
+    tr:last-child td{border-bottom:none;}
+    .yes{color:var(--accent);font-weight:600;}
+    .no{color:#e55;font-weight:600;}
+    .partial{color:#f0a500;font-weight:600;}
+    .comp-note{max-width:720px;margin:40px auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px 32px;}
+    .comp-note h3{font-weight:600;margin-bottom:10px;}
+    .comp-note p{color:var(--text2);font-size:.93rem;line-height:1.7;margin-bottom:8px;}
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-inner">
-      <div class="top-buttons" style="display:flex;gap:1rem;width:100%;margin-bottom:0.5rem;">
-        <a href="https://nullvpn.net/app-download" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.download">Download NullVPN App</a>
-        <a href="https://nullvpn.net/tg-bot" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.cta.buy">Buy via Telegram</a>
-      </div>
-      <a href="index.html" class="logo">Null<span>VPN</span></a>
-      
       <div class="nav-top-row">
-        <a href="https://nullvpn.net/app-download" class="btn-nav" data-i18n="nav.download">Download App</a>
-        <a href="https://nullvpn.net/tg-bot" class="btn-nav btn-primary" data-i18n="nav.cta.buy">Buy Premium</a>
-        
-        <div class="lang-selector">
-          <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
-          <button class="lang-btn" onclick="setLang('ru')" title="Русский">RU</button>
-          <button class="lang-btn" onclick="setLang('fa')" title="فارسی">FA</button>
-          <button class="lang-btn" onclick="setLang('zh')" title="中文">ZH</button>
-          <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">NE</button>
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <div class="nav-actions">
+          <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.download">Download App</a>
+          <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" class="btn-nav-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
         </div>
-        
-        <div class="theme-toggle">
-          <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
-          <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+        <div class="nav-controls">
+          <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
+          </div>
+          <div class="theme-toggle">
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">🌙</button>
+          </div>
         </div>
       </div>
-      
-      <ul class="nav-links nav-second-row">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <ul class="nav-links">
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
         <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
-        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="comparison.html" class="active" data-i18n="nav.compare">Compare</a></li>
         <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
@@ -83,193 +61,56 @@
     </div>
   </nav>
 
-  <section class="comparison-hero">
+  <section class="page-hero">
     <div class="container">
-      <div class="badge" data-i18n="comp.hero.badge">✦ March 2026 · Independent Analysis</div>
-      <h1 data-i18n="comp.hero.h1">Your VPN Gets Blocked.<br/>Ours Disappears.</h1>
-      <p class="lead" data-i18n="comp.hero.lead">Consumer VPNs use protocols that Deep Packet Inspection systems detect and block within hours. Here's what the real-world data shows — and why NullVPN is architecturally different.</p>
+      <h1><span data-i18n="comp.h1a">NullVPN vs.</span><br/><span data-i18n="comp.h1b">the rest.</span></h1>
+      <p data-i18n="comp.sub">An honest comparison for people who actually need their VPN to work in restricted countries.</p>
     </div>
   </section>
 
-  <section class="failure-section">
+  <section class="comp-section">
     <div class="container">
-      <h2>Head-to-Head: 9 Real-World Scenarios</h2>
-      <div class="table-wrapper">
-        <table class="comparison-table">
+      <div class="comp-table-wrap">
+        <table>
           <thead>
             <tr>
-              <th style="text-align:left">Scenario</th>
+              <th>Feature</th>
+              <th class="highlight">NullVPN</th>
               <th>NordVPN</th>
               <th>ExpressVPN</th>
               <th>ProtonVPN</th>
-              <th>Mullvad</th>
-              <th class="highlight">NullVPN</th>
+              <th>Outline/Shadowsocks</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><strong>Works through corporate firewall</strong></td>
-              <td>❌ Blocked</td>
-              <td>⚠️ Sometimes</td>
-              <td>❌ Blocked</td>
-              <td>❌ Blocked</td>
-              <td class="highlight">✅ Always</td>
-            </tr>
-            <tr>
-              <td><strong>Bypasses Iran's national DPI (2026)</strong></td>
-              <td>❌ No</td>
-              <td>⚠️ Occasionally</td>
-              <td>⚠️ Occasionally</td>
-              <td>❌ No</td>
-              <td class="highlight">✅ Yes</td>
-            </tr>
-            <tr>
-              <td><strong>Works in Russia — post Telegram block</strong></td>
-              <td>❌ Unstable</td>
-              <td>⚠️ Hit or miss</td>
-              <td>❌ Blocked</td>
-              <td>⚠️ Sometimes</td>
-              <td class="highlight">✅ Reliable</td>
-            </tr>
-            <tr>
-              <td><strong>Survives China's Great Firewall</strong></td>
-              <td>❌ No</td>
-              <td>⚠️ Obfuscated only</td>
-              <td>❌ No</td>
-              <td>❌ No</td>
-              <td class="highlight">⚠️ Yes with config</td>
-            </tr>
-            <tr>
-              <td><strong>Hotel / Airport Wi-Fi restrictions</strong></td>
-              <td>⚠️ Often blocked</td>
-              <td>⚠️ Often blocked</td>
-              <td>❌ Often blocked</td>
-              <td>⚠️ Often blocked</td>
-              <td class="highlight">✅ Works</td>
-            </tr>
-            <tr>
-              <td><strong>Payment without credit card or KYC</strong></td>
-              <td>❌ Card required</td>
-              <td>❌ Card required</td>
-              <td>❌ Card / limited crypto</td>
-              <td>✅ Cash / Crypto</td>
-              <td class="highlight">✅ TON / USDT only</td>
-            </tr>
-            <tr>
-              <td><strong>App available without app store</strong></td>
-              <td>❌ Store required</td>
-              <td>❌ Store required</td>
-              <td>❌ Store required</td>
-              <td>❌ Store required</td>
-              <td class="highlight">✅ Direct APK</td>
-            </tr>
-            <tr>
-              <td><strong>Auto-failover if primary tunnel blocked</strong></td>
-              <td>❌ No</td>
-              <td>⚠️ Limited</td>
-              <td>❌ No</td>
-              <td>❌ No</td>
-              <td class="highlight">✅ Silent auto-switch</td>
-            </tr>
-            <tr>
-              <td><strong>Monthly price (standard plan)</strong></td>
-              <td>~$13</td>
-              <td>~$13</td>
-              <td>~$10</td>
-              <td>€5</td>
-              <td class="highlight">$5</td>
-            </tr>
+            <tr><td>Works in Iran</td><td class="highlight yes">Yes ✔</td><td class="no">Unreliable ✘</td><td class="no">Unreliable ✘</td><td class="partial">Partial</td><td class="partial">Manual setup</td></tr>
+            <tr><td>Works in Russia</td><td class="highlight yes">Yes ✔</td><td class="no">Blocked ✘</td><td class="partial">Unreliable</td><td class="partial">Partial</td><td class="partial">Manual setup</td></tr>
+            <tr><td>Works in China</td><td class="highlight yes">Yes ✔</td><td class="no">Blocked ✘</td><td class="partial">Inconsistent</td><td class="no">Blocked ✘</td><td class="partial">Manual setup</td></tr>
+            <tr><td>No logs (by design)</td><td class="highlight yes">Yes ✔</td><td class="partial">Policy only</td><td class="partial">Policy only</td><td class="partial">Policy only</td><td class="yes">Yes</td></tr>
+            <tr><td>Anonymous payment</td><td class="highlight yes">TON crypto ✔</td><td class="no">Card/PayPal ✘</td><td class="no">Card/PayPal ✘</td><td class="no">Card/PayPal ✘</td><td class="no">Card ✘</td></tr>
+            <tr><td>No account/email needed</td><td class="highlight yes">Yes ✔</td><td class="no">Required ✘</td><td class="no">Required ✘</td><td class="no">Required ✘</td><td class="partial">Depends</td></tr>
+            <tr><td>No app store required</td><td class="highlight yes">Direct APK ✔</td><td class="no">App store ✘</td><td class="no">App store ✘</td><td class="no">App store ✘</td><td class="partial">Varies</td></tr>
+            <tr><td>Traffic obfuscation</td><td class="highlight yes">Deep ✔</td><td class="partial">Obfuscated servers</td><td class="partial">Lightway</td><td class="partial">Stealth</td><td class="partial">Some</td></tr>
+            <tr><td>Auto-failover</td><td class="highlight yes">Yes ✔</td><td class="no">No ✘</td><td class="no">No ✘</td><td class="no">No ✘</td><td class="no">No ✘</td></tr>
+            <tr><td>Dedicated personal server</td><td class="highlight yes">Yes ✔</td><td class="no">Shared ✘</td><td class="no">Shared ✘</td><td class="no">Shared ✘</td><td class="no">Self-hosted</td></tr>
+            <tr><td>Reachable if site blocked</td><td class="highlight yes">Telegram + Web3 ✔</td><td class="no">Website only ✘</td><td class="no">Website only ✘</td><td class="no">Website only ✘</td><td class="partial">Varies</td></tr>
+            <tr><td>Setup time</td><td class="highlight yes">60 seconds</td><td class="partial">5+ min</td><td class="partial">5+ min</td><td class="partial">5+ min</td><td class="no">Hours (manual)</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-notes">✅ Works reliably &nbsp;|&nbsp; ⚠️ Works sometimes or requires manual config &nbsp;|&nbsp; ❌ Blocked or not supported. Data based on March 2026 usage reports from users in Iran, Russia, China, and corporate networks.</p>
-    </div>
-  </section>
-
-  <section class="not-vpn-section">
-    <div class="container">
-      <h2>This Is Not a Regular VPN</h2>
-      <p class="lead">Consumer VPNs try to hide that you're using a VPN. NullVPN doesn't look like a VPN at all. That's a fundamental architectural difference — not a marketing claim.</p>
-      <div class="ladder">
-        <div class="ladder-card">
-          <h4>Consumer VPN — Layer 1</h4>
-          <p>Encrypts your data but uses recognisable protocols. Deep Packet Inspection (DPI) systems see the VPN traffic pattern and block it. Known IP ranges get blocklisted continuously.</p>
-        </div>
-        <div class="ladder-card">
-          <h4>Enhanced VPN — Layer 2</h4>
-          <p>Privacy-first providers like ProtonVPN and Mullvad. Better no-log policies and audited infrastructure — but still detectable as VPN traffic by national-level DPI.</p>
-        </div>
-        <div class="ladder-card featured">
-          <h4>NullVPN — Secure Tunnel Tier</h4>
-          <p>Not a VPN — a private connection that routes through the same port every bank, hospital, and government website uses. Your traffic is architecturally invisible to DPI systems. Zero detectable footprint.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="failure-section" style="background:var(--bg-card)">
-    <div class="container">
-      <h2>Why Consumer VPNs Keep Getting Blocked</h2>
-      <div class="failure-grid">
-        <div class="failure-card">
-          <h3>📋 Known IP Ranges</h3>
-          <p>Major VPN providers have thousands of servers, but their IP addresses are publicly listed and shared among millions of users. Government blocklists update continuously — often within hours of a VPN becoming popular.</p>
-        </div>
-        <div class="failure-card">
-          <h3>🔍 Detectable Protocols</h3>
-          <p>Standard VPN protocols (OpenVPN, IKEv2, WireGuard) have recognisable traffic patterns. Deep Packet Inspection can identify and block them even when encrypted — without reading your content.</p>
-        </div>
-        <div class="failure-card">
-          <h3>🚪 Predictable Ports</h3>
-          <p>Most VPNs use well-known ports (1194 for OpenVPN, 500/4500 for IPsec). Firewalls can block these ports entirely. Even obfuscated modes get detected over time as DPI systems adapt.</p>
-        </div>
-        <div class="failure-card">
-          <h3>📱 App Store Dependency</h3>
-          <p>When governments pressure Apple or Google to remove VPN apps — as happened in Russia and China — users lose access immediately. No app means no connection, regardless of subscription status.</p>
-        </div>
-      </div>
-      <div class="solution-callout">
-        <h3>NullVPN's Architectural Advantage</h3>
-        <p>NullVPN routes through the same port used by every bank, e-commerce site, and government website globally. No state actor can block it without destroying their own digital infrastructure. Your traffic looks identical to normal secure web browsing. There is no VPN signature to detect.</p>
-        <p style="margin-top:12px"><strong>The connection that doesn't exist — to a firewall.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="personas-section">
-    <div class="container">
-      <h2>Who Needs More Than a Consumer VPN?</h2>
-      <div class="persona-grid">
-        <div class="persona-card">
-          <h3>🏢 Remote Teams in Restricted Countries</h3>
-          <p>Your team in Tehran or Moscow needs reliable access to Slack, Gmail, and internal tools. Consumer VPNs work for days, then get blocked. Your team loses productivity every time they have to find a new VPN.</p>
-          <div class="solution"><strong>NullVPN:</strong> One connection that works continuously. No weekly VPN shopping.</div>
-        </div>
-        <div class="persona-card">
-          <h3>✈️ Business Travelers</h3>
-          <p>You're in Dubai, Shanghai, or Istanbul. The hotel Wi-Fi blocks your VPN. You need to reach internal company tools — but your ExpressVPN subscription is useless.</p>
-          <div class="solution"><strong>NullVPN:</strong> Connects through any corporate firewall or hotel restriction.</div>
-        </div>
-        <div class="persona-card">
-          <h3>📰 Journalists &amp; NGOs</h3>
-          <p>Your sources are in countries where VPN traffic is monitored. Using a consumer VPN with a known IP range puts you on a watchlist.</p>
-          <div class="solution"><strong>NullVPN:</strong> Traffic appears as normal HTTPS. No VPN fingerprint to flag.</div>
-        </div>
-        <div class="persona-card">
-          <h3>🏛️ SMBs With Offices in Censored Regions</h3>
-          <p>Your Yerevan or Minsk office needs reliable connectivity. Consumer VPNs are a revolving door of &ldquo;working today, blocked tomorrow.&rdquo;</p>
-          <div class="solution"><strong>NullVPN:</strong> Enterprise-grade reliability at consumer VPN pricing.</div>
-        </div>
+      <div class="comp-note">
+        <h3>Why NullVPN is built differently</h3>
+        <p>Consumer VPNs are designed for privacy from corporations in countries where VPNs are legal and unrestricted. They are not optimised to bypass active censorship from state-level firewalls.</p>
+        <p>NullVPN is designed from the ground up for one purpose: reliable internet access in countries where the government is actively trying to block all VPN traffic. Every design decision flows from that single goal.</p>
       </div>
     </div>
   </section>
 
   <section class="cta-banner">
     <div class="container">
-      <h2 data-i18n="comp.cta.h">Stop Playing VPN Whack-a-Mole</h2>
-      <p data-i18n="comp.cta.p">Tired of buying a new VPN subscription every month? Try something architecturally different.</p>
-      <a href="pricing.html" class="btn-primary btn-large" data-i18n="comp.cta.btn">Get NullVPN from $5/month →</a>
-      <p class="cta-small"><span data-i18n="index.cta.also">Also via</span> <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener">Telegram Bot</a> · <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">Сайт в TON Network</a></p>
+      <h2 data-i18n="comp.cta.h">The clear choice for restricted countries</h2>
+      <p data-i18n="comp.cta.p">Join thousands of users already connected.</p>
+      <a href="pricing.html" class="btn-primary btn-large" data-i18n="comp.cta.btn">Get NullVPN →</a>
     </div>
   </section>
 
@@ -279,26 +120,37 @@
         <a href="index.html" class="logo">Null<span>VPN</span></a>
         <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
         <div class="footer-links-social">
-          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener">Telegram Channel</a>
-          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener">Telegram Bot</a>
-          <a href="https://nullvpn.net" target="_blank" rel="noopener">Web2</a>
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
           <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
         </div>
       </div>
-      <div class="footer-nav"><h4 data-i18n="footer.pages">Pages</h4><ul>
-        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
-        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
-        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
-        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
-      </ul></div>
-      <div class="footer-nav"><h4 data-i18n="footer.legal">Legal</h4><ul>
-        <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
-        <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
-      </ul></div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p></div>
   </footer>
+
   <script src="i18n.js?v=2"></script>
+  <script>
+    function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');}
+    (function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');})();
+  </script>
 </body>
 </html>
