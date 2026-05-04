@@ -18,19 +18,34 @@
         <a href="https://nullvpn.net/tg-bot" class="btn-primary" style="flex:1;text-align:center;" target="_blank" data-i18n="nav.cta.buy">Buy via Telegram</a>
       </div>
       <a href="index.html" class="logo">Null<span>VPN</span></a>
-      <ul class="nav-links">
+      
+      <div class="nav-top-row">
+        <a href="https://nullvpn.net/app-download" class="btn-nav" data-i18n="nav.download">Download App</a>
+        <a href="https://nullvpn.net/tg-bot" class="btn-nav btn-primary" data-i18n="nav.cta.buy">Buy Premium</a>
+        
+        <div class="lang-selector">
+          <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+          <button class="lang-btn" onclick="setLang('ru')" title="Русский">RU</button>
+          <button class="lang-btn" onclick="setLang('fa')" title="فارسی">FA</button>
+          <button class="lang-btn" onclick="setLang('zh')" title="中文">ZH</button>
+          <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">NE</button>
+        </div>
+        
+        <div class="theme-toggle">
+          <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
+          <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+        </div>
+      </div>
+      
+      <ul class="nav-links nav-second-row">
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
         <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
-        <li><a href="pricing.html" class="active" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <div class="theme-toggle">
-        <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
-        <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
-      </div>
-      <a href="https://nullvpn.net/tg-bot" class="btn-primary nav-cta" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy via Telegram Bot</a>
     </div>
   </nav>
   <section class="page-hero"><div class="container"><h1><span data-i18n="price.h1a">Simple, honest</span><br/><span data-i18n="price.h1b">pricing.</span></h1><p data-i18n="price.sub">One plan. Everything included. Pay with TON crypto. No surprises.</p></div></section>
