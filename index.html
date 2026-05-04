@@ -13,15 +13,21 @@
 <body>
   <nav class="navbar">
     <div class="nav-inner">
-
-
-      <!-- Row 2: Logo + Download + Buy + Language + Theme -->
+      <!-- Row 1: Navigation links -->
+      <ul class="nav-links nav-second-row">
+        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <!-- Row 2: Logo + Actions + Language + Theme -->
       <a href="index.html" class="logo">Null<span>VPN</span></a>
       <div class="nav-top-row">
-        <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" data-i18n="nav.download">Download App</a>
-          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
-          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
-
+        <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.download">Download App</a>
+        <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+        <a href="https://nullvpn.net/tg-bot" class="btn-nav btn-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
         <!-- Language Selector: native-script labels -->
         <div class="lang-selector">
           <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
@@ -30,7 +36,6 @@
           <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
           <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
         </div>
-
         <!-- Theme Toggle -->
         <div class="theme-toggle">
           <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
@@ -42,23 +47,22 @@
 
   <section class="social-proof">
     <div class="container">
-    <h2 data-i18n="index.diff.h">        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p> </h2>      
+      <p class="sp-tagline" data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
       <p class="sp-label" data-i18n="index.sp">Built for users in the world's most restricted networks</p>
       <div class="country-flags">
         <span>🇨🇳 China</span><span>🇮🇷 Iran</span><span>🇷🇺 Russia</span>
-        <span>🇧🇾 Belarus</span><span>🇵🇰 Nepal</span><span>🇺🇿 Uzbekistan</span>
-
+        <span>🇧🇾 Belarus</span><span>🇳🇵 Nepal</span><span>🇺🇿 Uzbekistan</span>
       </div>
     </div>
   </section>
-<h2 data-i18n="index.diff.h">        <p data-i18n="footer.tagline">Why NullPVN is different .</p> </h2>      
+
   <section class="features-teaser">
     <div class="container">
-      
+      <h2 data-i18n="index.diff.h">Why NullVPN is different.</h2>
       <div class="feat-grid">
         <div class="feat-card"><div class="feat-icon">🔬</div><h3 data-i18n="index.f1.h">Not a regular VPN</h3><p data-i18n="index.f1.p">Routes through the same port every bank uses. Your traffic looks like normal secure web browsing. No VPN fingerprint for firewalls to detect.</p></div>
         <div class="feat-card"><div class="feat-icon">🔄</div><h3 data-i18n="index.f2.h">Auto-failover. Always connected.</h3><p data-i18n="index.f2.p">If one tunnel gets blocked, NullVPN silently switches to another. You stay connected. You never notice it happened.</p></div>
-        <div class="feat-card"><div class="feat-icon">💎</div><h3 data-i18n="index.f3.h">Get free trial and and pay with fiat or crypto</h3><p data-i18n="index.f3.p">No bank card. No name. No transaction history linked to you. Pay with Fiat or crypto from any wallet in seconds.</p></div>
+        <div class="feat-card"><div class="feat-icon">💎</div><h3 data-i18n="index.f3.h">Free trial. Pay with fiat or crypto.</h3><p data-i18n="index.f3.p">No bank card required. No name. No transaction history linked to you. Pay with fiat or crypto from any wallet in seconds.</p></div>
         <div class="feat-card"><div class="feat-icon">📱</div><h3 data-i18n="index.f4.h">2 taps. Zero config.</h3><p data-i18n="index.f4.p">Pay, receive your personal connection link, tap Connect. No settings. No technical knowledge required.</p></div>
       </div>
       <a href="comparison.html" class="btn-outline" style="display:block;width:fit-content;margin:0 auto" data-i18n="index.feat.compare">See NullVPN vs NordVPN, ExpressVPN, ProtonVPN →</a>
@@ -86,22 +90,13 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="index.html" class="logo">Null<span>VPN</span></a>
-
+        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
         <div class="footer-links-social">
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
           <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
         </div>
       </div>
-
-      <!-- Row 1: Navigation links -->
-      <ul class="nav-links nav-second-row">
-        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
-        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
-        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
-        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-      </ul>
-
       <div class="footer-nav"><h4 data-i18n="footer.pages">Pages</h4><ul>
         <li><a href="features.html" data-i18n="nav.features">Features</a></li>
         <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
@@ -125,7 +120,6 @@
       localStorage.setItem('theme', theme);
       updateThemeButtons(theme);
     }
-
     function updateThemeButtons(theme) {
       document.getElementById('themeLight').classList.remove('active');
       document.getElementById('themeDark').classList.remove('active');
@@ -135,8 +129,6 @@
         document.getElementById('themeDark').classList.add('active');
       }
     }
-
-    // Initialize theme on page load
     (function() {
       var savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
