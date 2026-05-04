@@ -29,8 +29,7 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { opacity: 0.8; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-/* ========== BUTTONS — unified hover for all variants ========== */
-/* Base shared geometry — apply to all btn classes */
+/* ========== BUTTONS — unified hover for ALL variants ========== */
 .btn-primary,
 .btn-outline,
 .btn-ghost,
@@ -72,9 +71,9 @@ a:hover { opacity: 0.8; }
   color: #fff;
   border: 1.5px solid var(--accent);
 }
-.btn-primary:hover  { background: var(--accent2); border-color: var(--accent2); }
+.btn-primary:hover { background: var(--accent2); border-color: var(--accent2); }
 
-/* Ghost/outline */
+/* Outline */
 .btn-outline {
   background: transparent;
   color: var(--accent);
@@ -82,6 +81,7 @@ a:hover { opacity: 0.8; }
 }
 .btn-outline:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+/* Ghost */
 .btn-ghost {
   background: transparent;
   color: var(--text2);
@@ -89,7 +89,7 @@ a:hover { opacity: 0.8; }
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Nav buttons — ghost style by default */
+/* Nav ghost */
 .btn-nav {
   background: var(--bg3);
   color: var(--text);
@@ -97,7 +97,7 @@ a:hover { opacity: 0.8; }
 }
 .btn-nav:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* Nav primary CTA (Buy Premium) */
+/* Nav primary CTA */
 .btn-nav-primary {
   background: var(--accent);
   color: #fff;
@@ -105,7 +105,6 @@ a:hover { opacity: 0.8; }
 }
 .btn-nav-primary:hover { background: var(--accent2); border-color: var(--accent2); }
 
-/* Size modifier */
 .btn-large { padding: 14px 36px; font-size: 1rem; }
 .btn-full   { width: 100%; display: block; }
 
@@ -126,7 +125,6 @@ a:hover { opacity: 0.8; }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0;
   padding: 10px 0 0 0;
 }
 
@@ -145,6 +143,7 @@ a:hover { opacity: 0.8; }
   color: var(--text);
   margin-right: auto;
   flex-shrink: 0;
+  text-decoration: none;
 }
 .logo span { color: var(--accent); }
 
@@ -162,22 +161,25 @@ a:hover { opacity: 0.8; }
   flex-shrink: 0;
 }
 
-/* Second row: nav links */
+/* Nav links row — YOUR DESIGN: sits below the top row */
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
-  list-style: none;
+  flex-wrap: wrap;
   padding: 8px 0;
   border-top: 1px solid var(--border);
-  flex-wrap: wrap;
+  margin: 0;
 }
 .nav-links a {
   color: var(--text2);
   font-size: 0.9rem;
   font-weight: 500;
+  text-decoration: none;
   transition: color 0.18s ease;
 }
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--text);
   opacity: 1;
 }
@@ -195,7 +197,7 @@ a:hover { opacity: 0.8; }
   color: var(--text2);
 }
 [data-theme="dark"] .theme-btn { background: #2a2a2a; color: #ccc; }
-.theme-btn:hover { background: var(--bg3); opacity: 0.8; }
+.theme-btn:hover { opacity: 0.8; }
 .theme-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 /* ========== LANGUAGE SELECTOR ========== */
@@ -225,7 +227,7 @@ a:hover { opacity: 0.8; }
 .lang-btn:hover { color: var(--text); background: rgba(16,185,129,0.12); }
 .lang-btn.active { background: var(--accent); color: #fff; }
 
-/* ========== HERO (unused on index — kept for other pages) ========== */
+/* ========== HERO (sub-pages) ========== */
 .hero { padding: 80px 24px 60px; text-align: center; }
 .hero-inner { max-width: 800px; margin: 0 auto; }
 .badge { display: inline-block; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: var(--accent); padding: 6px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 28px; }
@@ -251,7 +253,6 @@ a:hover { opacity: 0.8; }
 .feat-icon { font-size: 1.8rem; margin-bottom: 12px; }
 .feat-card h3 { font-size: 1rem; margin-bottom: 8px; font-weight: 600; }
 .feat-card p { color: var(--text2); font-size: 0.9rem; line-height: 1.6; }
-.features-teaser > .container > .btn-outline { display: block; width: fit-content; margin: 0 auto; }
 
 /* ========== WHY SECTION ========== */
 .why-section { padding: 64px 24px; background: var(--bg); }
@@ -269,6 +270,7 @@ a:hover { opacity: 0.8; }
 }
 .cta-banner h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 10px; }
 .cta-banner p { color: var(--text2); margin-bottom: 24px; font-size: 1rem; }
+.cta-small { margin-top: 16px; font-size: 0.9rem; color: var(--text2); }
 
 /* ========== PAGE HERO (sub-pages) ========== */
 .page-hero { padding: 72px 24px 52px; text-align: center; border-bottom: 1px solid var(--border); }
@@ -335,15 +337,15 @@ a:hover { opacity: 0.8; }
 .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; }
 .footer-brand p { color: var(--text2); margin-top: 8px; font-size: 0.88rem; line-height: 1.5; }
 .footer-links-social { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
-.footer-links-social a { color: var(--text2); font-size: 0.84rem; transition: color 0.18s ease; }
+.footer-links-social a { color: var(--text2); font-size: 0.84rem; transition: color 0.18s ease; text-decoration: none; }
 .footer-links-social a:hover { color: var(--accent); opacity: 1; }
 .footer-nav h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text2); margin-bottom: 14px; }
 .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-.footer-nav a { color: var(--text2); font-size: 0.88rem; transition: color 0.18s ease; }
+.footer-nav a { color: var(--text2); font-size: 0.88rem; transition: color 0.18s ease; text-decoration: none; }
 .footer-nav a:hover { color: var(--text); opacity: 1; }
 .footer-bottom { border-top: 1px solid var(--border); padding: 18px 0; text-align: center; color: var(--text2); font-size: 0.82rem; }
 
-/* ========== PROBLEMS (comparison pages) ========== */
+/* ========== PROBLEMS ========== */
 .problems { padding: 72px 24px; }
 .problems h2 { text-align: center; font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 40px; font-weight: 700; }
 .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
@@ -352,7 +354,6 @@ a:hover { opacity: 0.8; }
 .problem-card p { color: var(--text2); font-size: 0.9rem; }
 
 /* ========== RTL SUPPORT ========== */
-[dir="rtl"] .nav-inner { flex-direction: column; }
 [dir="rtl"] .nav-top-row { flex-direction: row-reverse; }
 [dir="rtl"] .logo { margin-right: 0; margin-left: auto; }
 [dir="rtl"] .hero-btns { flex-direction: row-reverse; }
@@ -362,35 +363,24 @@ a:hover { opacity: 0.8; }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  /* Nav: stack controls under logo row */
   .nav-top-row { gap: 8px; }
-  .nav-actions { gap: 6px; order: 2; width: 100%; justify-content: center; }
-  .nav-controls { order: 3; width: 100%; justify-content: center; }
   .logo { order: 1; margin-right: 0; width: 100%; text-align: left; }
+  .nav-actions { order: 2; width: 100%; justify-content: center; gap: 6px; }
+  .nav-controls { order: 3; width: 100%; justify-content: center; }
 
-  /* Hide desktop nav links row on mobile */
-  .nav-links { display: none; }
+  /* Nav links — YOUR DESIGN stays at bottom of navbar */
+  .nav-links { gap: 14px; padding: 8px 0; }
 
-  /* Footer stacks vertically */
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-
-  /* Feature rows stack */
   .feature-row, .feature-row.reverse { grid-template-columns: 1fr; }
   .feature-visual { display: none; }
-
-  /* Steps stack */
   .step { flex-direction: column; gap: 10px; }
   .step-number { font-size: 2rem; min-width: unset; }
-
-  /* Buttons become full-width on small screens inside CTAs */
   .cta-banner .btn-primary { width: 100%; max-width: 320px; }
-
-  /* Lang selector wraps */
   .lang-selector { flex-wrap: wrap; }
 }
 
 @media (max-width: 480px) {
-  /* Tighten section padding on very small screens */
   .features-teaser,
   .why-section,
   .cta-banner,
@@ -399,10 +389,6 @@ a:hover { opacity: 0.8; }
   .contact-section,
   .features-full,
   .steps-section { padding-left: 16px; padding-right: 16px; }
-
-  /* Feat cards full-width */
   .feat-grid { grid-template-columns: 1fr; }
-
-  /* Pricing full-width */
   .pricing-grid { grid-template-columns: 1fr; }
 }
