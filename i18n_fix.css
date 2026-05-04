@@ -1,0 +1,31 @@
+/* Fix for paragraph rendering issues in incognito/private mode */
+/* Ensures consistent paragraph styling regardless of localStorage availability */
+
+p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+[data-i18n] {
+  display: inline;
+}
+
+p[data-i18n] {
+  display: block;
+}
+
+/* Ensure RTL languages render correctly */
+[dir="rtl"] p {
+  text-align: right;
+}
+
+[dir="ltr"] p {
+  text-align: left;
+}
+
+/* Force content visibility even when JavaScript is disabled or localStorage unavailable */
+[data-i18n]:empty::before {
+  content: attr(data-i18n-fallback);
+}
