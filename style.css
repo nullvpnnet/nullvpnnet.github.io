@@ -465,3 +465,29 @@ a:hover { opacity: 0.8; }
 }
 [dir="rtl"] .logo { margin-left: auto; margin-right: 0; }
 [dir="rtl"] .nav-actions { margin-right: auto; margin-left: 0; }
+
+/* Fix for paragraph rendering issues in incognito/private mode */
+/* Ensures consistent paragraph styling regardless of localStorage availability */
+p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+[data-i18n] {
+  display: inline;
+}
+
+p[data-i18n] {
+  display: block;
+}
+
+/* Ensure RTL languages render correctly */
+[dir="rtl"] p {
+  text-align: right;
+}
+
+[dir="ltr"] p {
+  text-align: left;
+}
