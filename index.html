@@ -19,6 +19,10 @@
         <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
+      <div class="theme-toggle">
+        <button class="theme-btn" id="themeLight" onclick="setTheme('light')">☀️</button>
+        <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">🌙</button>
+      </div>
       <a href="pricing.html" class="btn-primary nav-cta" data-i18n="nav.cta">Get Started</a>
     </div>
   </nav>
@@ -91,7 +95,7 @@
       <h2 data-i18n="index.cta.h">Stop playing VPN whack-a-mole.</h2>
       <p data-i18n="index.cta.p">Get a connection that actually works. From $5/month. Cancel anytime.</p>
       <a href="pricing.html" class="btn-primary btn-large" data-i18n="index.cta.btn">Get NullVPN →</a>
-      <p class="cta-small"><span data-i18n="index.cta.also">Also via</span> <a href="https://t.me/nullvpnnetbot" target="_blank" rel="noopener">Telegram Bot</a> · <a href="https://nullvpn.ton.run" target="_blank" rel="noopener">nullvpn.ton.run</a></p>
+      <p class="cta-small"><span data-i18n="index.cta.also">Also via</span> <a href="https://t.me/nullvpnnetbot" target="_blank" rel="noopener">Telegram Bot</a> · <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">Сайт в TON Network</a></p>
     </div>
   </section>
 
@@ -101,9 +105,10 @@
         <a href="index.html" class="logo">Null<span>VPN</span></a>
         <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
         <div class="footer-links-social">
-          <a href="https://t.me/nullvpnnet" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener">Telegram Channel</a>
+          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener">Telegram Bot</a>
           <a href="https://nullvpn.net" target="_blank" rel="noopener">Web2</a>
-          <a href="https://nullvpn.ton.run" target="_blank" rel="noopener">TON Web3</a>
+          <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
         </div>
       </div>
       <div class="footer-nav"><h4 data-i18n="footer.pages">Pages</h4><ul>
@@ -122,5 +127,29 @@
     <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p></div>
   </footer>
   <script src="i18n.js?v=2"></script>
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateThemeButtons(theme);
+    }
+    
+    function updateThemeButtons(theme) {
+      document.getElementById('themeLight').classList.remove('active');
+      document.getElementById('themeDark').classList.remove('active');
+      if (theme === 'light') {
+        document.getElementById('themeLight').classList.add('active');
+      } else {
+        document.getElementById('themeDark').classList.add('active');
+      }
+    }
+    
+    // Initialize theme on page load
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeButtons(savedTheme);
+    })();
+  </script>
 </body>
 </html>
