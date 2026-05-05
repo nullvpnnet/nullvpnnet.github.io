@@ -77,13 +77,13 @@
     <div class="container">
       <div class="dl-icon" aria-hidden="true">💎</div>
       <h1 class="dl-title" data-i18n="web3.h1">Opening NullVPN on TON…</h1>
-      <p class="dl-sub" data-i18n="web3.sub">You’re being redirected to NullVPN’s decentralised Web3 site on the TON Network. Accessible even when this site is blocked.</p>
+      <p class="dl-sub" data-i18n="web3.sub">You're being redirected to NullVPN's decentralised Web3 site on the TON Network. Accessible even when this site is blocked.</p>
       <div class="dl-progress" role="status" aria-live="polite">
         <div class="dl-spinner" aria-hidden="true"></div>
         <span data-i18n="web3.redirecting">Connecting to TON…</span>
       </div>
       <p class="dl-manual" data-i18n="web3.manual">
-        Not redirecting? <a href="https://app.ton.domains/nullvpn.ton" id="web3-link" target="_blank" rel="noopener">Open nullvpn.ton directly</a>
+        Not redirecting? <a href="https://tonviewer.com/nullvpn.ton" id="web3-link" target="_blank" rel="noopener">Open nullvpn.ton directly</a>
       </p>
     </div>
   </section>
@@ -140,7 +140,7 @@
 
     // Redirect after 1500ms — page renders long enough for CF RUM (edge-injected) + CrUX to record
     setTimeout(function() {
-      window.location.href = 'https://app.ton.domains/nullvpn.ton';
+      window.location.href = 'https://tonviewer.com/nullvpn.ton';
     }, 1500);
   </script>
 
