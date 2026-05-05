@@ -89,47 +89,47 @@
       <p class="lead" data-i18n="how.unblock.lead">Most VPNs use protocols that Deep Packet Inspection systems can detect and block within hours. NullVPN uses a fundamentally different approach.</p>
       <div class="method-grid">
         <div class="method-card">
-          <h3>❌ Regular VPNs</h3>
+          <h3 data-i18n="how.regular.h">❌ Regular VPNs</h3>
           <ul>
-            <li>Use detectable protocols (OpenVPN, IKEv2, WireGuard)</li>
-            <li>Run on predictable, blockable ports</li>
-            <li>Leave recognisable traffic fingerprints</li>
-            <li>IP ranges publicly listed — continuously blocklisted</li>
-            <li>Require app store installation</li>
+            <li data-i18n="how.regular.1">Use detectable protocols (OpenVPN, IKEv2, WireGuard)</li>
+            <li data-i18n="how.regular.2">Run on predictable, blockable ports</li>
+            <li data-i18n="how.regular.3">Leave recognisable traffic fingerprints</li>
+            <li data-i18n="how.regular.4">IP ranges publicly listed — continuously blocklisted</li>
+            <li data-i18n="how.regular.5">Require app store installation</li>
           </ul>
-          <p class="verdict">Result: Blocked in Iran, Russia, China within days</p>
+          <p class="verdict" data-i18n="how.regular.verdict">Result: Blocked in Iran, Russia, China within days</p>
         </div>
         <div class="method-card featured">
-          <h3>✅ NullVPN</h3>
+          <h3 data-i18n="how.nullvpn.h">✅ NullVPN</h3>
           <ul>
-            <li>Routes through the same port every bank uses</li>
-            <li>Traffic appears identical to HTTPS web browsing</li>
-            <li>Zero detectable VPN fingerprint</li>
-            <li>Multiple independent encryption layers</li>
-            <li>Auto-failover if primary route is blocked</li>
-            <li>No app store required — direct APK</li>
+            <li data-i18n="how.nullvpn.1">Routes through the same port every bank uses</li>
+            <li data-i18n="how.nullvpn.2">Traffic appears identical to HTTPS web browsing</li>
+            <li data-i18n="how.nullvpn.3">Zero detectable VPN fingerprint</li>
+            <li data-i18n="how.nullvpn.4">Multiple independent encryption layers</li>
+            <li data-i18n="how.nullvpn.5">Auto-failover if primary route is blocked</li>
+            <li data-i18n="how.nullvpn.6">No app store required — direct APK</li>
           </ul>
-          <p class="verdict">✅ Works through corporate firewalls, national blocks, hotel Wi-Fi</p>
+          <p class="verdict" data-i18n="how.nullvpn.verdict">✅ Works through corporate firewalls, national blocks, hotel Wi-Fi</p>
         </div>
       </div>
       <div class="analogy-box">
-        <h3>The Simple Analogy</h3>
-        <p><strong>Regular VPNs</strong> are like driving a car with "VPN TRAFFIC" painted on the roof. Traffic inspection systems spot you instantly and block you.</p>
-        <p><strong>NullVPN</strong> looks exactly like the millions of ordinary encrypted web requests passing through the same port every bank and secure site uses. Firewalls cannot block it without breaking the internet for everyone.</p>
+        <h3 data-i18n="how.analogy.h">The Simple Analogy</h3>
+        <p data-i18n="how.analogy.p1"><strong>Regular VPNs</strong> are like driving a car with "VPN TRAFFIC" painted on the roof. Traffic inspection systems spot you instantly and block you.</p>
+        <p data-i18n="how.analogy.p2"><strong>NullVPN</strong> looks exactly like the millions of ordinary encrypted web requests passing through the same port every bank and secure site uses. Firewalls cannot block it without breaking the internet for everyone.</p>
       </div>
       <div class="port-insight">
-        <h4>Why This Port Is Unblockable</h4>
-        <p>The same port that handles every secure website on the internet — banking, government portals, healthcare, e-commerce. No state actor can block it without destroying their own digital infrastructure.</p>
+        <h4 data-i18n="how.port.h">Why This Port Is Unblockable</h4>
+        <p data-i18n="how.port.p">The same port that handles every secure website on the internet — banking, government portals, healthcare, e-commerce. No state actor can block it without destroying their own digital infrastructure.</p>
       </div>
       <div style="margin-top:2rem">
-        <h4 data-i18n="tech.h" style="font-weight:600;margin-bottom:8px">Technology at a glance</h4>
+        <h4 data-i18n="how.tech.h" style="font-weight:600;margin-bottom:8px">Technology at a glance</h4>
         <ul class="tech-list">
-          <li data-i18n="tech.1">Routes through the same port every bank or government institution uses</li>
-          <li data-i18n="tech.2">Zero traffic fingerprint — we do not disclose additional details, to resist censorship and tampering</li>
-          <li data-i18n="tech.3">Multiple independent military-grade encryption layers</li>
-          <li data-i18n="tech.4">Auto-failover — seamless backup routing</li>
-          <li data-i18n="tech.5">Dedicated private server — only your traffic, ever</li>
-          <li data-i18n="tech.6">No activity logs by architecture, not just policy</li>
+          <li data-i18n="how.tech.1">Routes through the same port every bank or government institution uses</li>
+          <li data-i18n="how.tech.2">Zero traffic fingerprint — we do not disclose additional details, to resist censorship and tampering</li>
+          <li data-i18n="how.tech.3">Multiple independent military-grade encryption layers</li>
+          <li data-i18n="how.tech.4">Auto-failover — seamless backup routing</li>
+          <li data-i18n="how.tech.5">Dedicated private server — only your traffic, ever</li>
+          <li data-i18n="how.tech.6">No activity logs by architecture, not just policy</li>
         </ul>
       </div>
     </div>
@@ -139,11 +139,11 @@
     <div class="container">
       <h2 data-i18n="how.flow.h">What happens behind the scenes</h2>
       <div class="flow-grid">
-        <div class="flow-step"><div class="flow-icon">💎</div><h4>You pay with TON</h4><p>Anonymous crypto payment. No identity check.</p></div>
-        <div class="flow-step"><div class="flow-icon">⚡</div><h4>Auto-provisioned</h4><p>System generates your personal connection instantly.</p></div>
-        <div class="flow-step"><div class="flow-icon">🔗</div><h4>One link sent</h4><p>You receive a single activation link via Telegram bot.</p></div>
-        <div class="flow-step"><div class="flow-icon">📲</div><h4>Tap to install</h4><p>APK installs, configures itself silently.</p></div>
-        <div class="flow-step"><div class="flow-icon">🟢</div><h4>Connected</h4><p>Tap Connect. Invisible to firewalls.</p></div>
+        <div class="flow-step"><div class="flow-icon">💎</div><h4 data-i18n="how.flow.1">You pay with TON</h4><p data-i18n="how.flow.1.d">Anonymous crypto payment. No identity check.</p></div>
+        <div class="flow-step"><div class="flow-icon">⚡</div><h4 data-i18n="how.flow.2">Auto-provisioned</h4><p data-i18n="how.flow.2.d">System generates your personal connection instantly.</p></div>
+        <div class="flow-step"><div class="flow-icon">🔗</div><h4 data-i18n="how.flow.3">One link sent</h4><p data-i18n="how.flow.3.d">You receive a single activation link via Telegram bot.</p></div>
+        <div class="flow-step"><div class="flow-icon">📲</div><h4 data-i18n="how.flow.4">Tap to install</h4><p data-i18n="how.flow.4.d">APK installs, configures itself silently.</p></div>
+        <div class="flow-step"><div class="flow-icon">🟢</div><h4 data-i18n="how.flow.5">Connected</h4><p data-i18n="how.flow.5.d">Tap Connect. Invisible to firewalls.</p></div>
       </div>
     </div>
   </section>
