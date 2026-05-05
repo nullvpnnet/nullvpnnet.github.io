@@ -9,6 +9,105 @@
   <meta name="description" content="NullVPN features — fast, private, works in Iran Russia China. No logs, crypto payments, instant setup."/>
   <title>Features — NullVPN</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .feat-section { padding: 64px 24px; }
+
+    /* ── Feature table ── */
+    .feat-table-wrap { overflow-x: auto; margin-top: 32px; }
+    .feat-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .feat-table th {
+      background: var(--bg3);
+      color: var(--text);
+      font-weight: 700;
+      padding: 14px 16px;
+      text-align: left;
+    }
+    .feat-table th.icon-col { width: 48px; text-align: center; }
+    .feat-table td {
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .feat-table tr:last-child td { border-bottom: none; }
+    .feat-table td.feat-icon {
+      text-align: center;
+      font-size: 1.6rem;
+      line-height: 1;
+      width: 56px;
+    }
+    .feat-table td.feat-tag-cell { width: 110px; padding-top: 20px; }
+    .feat-table td.feat-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .feat-table td.feat-body p {
+      color: var(--text2);
+      font-size: .9rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Tag badge — reuse comparison page style */
+    .feat-badge {
+      display: inline-block;
+      background: rgba(16,185,129,.12);
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    /* ── Summary note card (mirrors comp-note) ── */
+    .feat-note {
+      max-width: 720px;
+      margin: 40px auto 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+    .feat-note h3 { font-weight: 600; margin-bottom: 10px; }
+    .feat-note p { color: var(--text2); font-size: .93rem; line-height: 1.7; margin-bottom: 8px; }
+
+    /* ── Mobile: stack icon above text, hide tag column ── */
+    @media (max-width: 600px) {
+      .feat-section { padding: 40px 16px; }
+      .feat-table, .feat-table tbody, .feat-table tr, .feat-table td {
+        display: block;
+        width: 100%;
+      }
+      .feat-table thead { display: none; }
+      .feat-table tr {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+      }
+      .feat-table tr:last-child { border-bottom: none; }
+      .feat-table td {
+        border-bottom: none;
+        padding: 4px 0;
+        width: 100% !important;
+      }
+      .feat-table td.feat-icon {
+        text-align: center;
+        font-size: 2rem;
+        padding: 0 0 8px;
+      }
+      .feat-table td.feat-tag-cell {
+        text-align: center;
+        padding: 0 0 6px;
+      }
+      .feat-table td.feat-body { text-align: center; }
+      .feat-table td.feat-body h3 { font-size: 1.05rem; }
+      .feat-table td.feat-body p { font-size: .9rem; }
+      .feat-note { padding: 20px 18px; }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -54,13 +153,68 @@
     </div>
   </section>
 
-  <section class="features-full">
+  <section class="feat-section">
     <div class="container">
-      <div class="feature-row"><div class="feature-text"><span class="feature-tag" data-i18n="feat.tag1">Privacy</span><h2 data-i18n="feat.r1.h">Absolute zero logs</h2><p data-i18n="feat.r1.p">We have no idea who you are, what sites you visit, or when you connect. No email required. No name. No phone number.</p></div><div class="feature-visual">🔐</div></div>
-      <div class="feature-row reverse"><div class="feature-text"><span class="feature-tag" data-i18n="feat.tag2">Reliability</span><h2 data-i18n="feat.r2.h">Works where others don't</h2><p data-i18n="feat.r2.p">Uses advanced obfuscation that disguises traffic as normal web activity. Specifically designed for Iran, Russia, China, and similar environments.</p></div><div class="feature-visual">🌐</div></div>
-      <div class="feature-row"><div class="feature-text"><span class="feature-tag" data-i18n="feat.tag3">Payments</span><h2 data-i18n="feat.r3.h">Pay without a trace</h2><p data-i18n="feat.r3.p">TON cryptocurrency only. No bank card. No PayPal. No identity. Payments processed automatically — no human involved.</p></div><div class="feature-visual">💎</div></div>
-      <div class="feature-row reverse"><div class="feature-text"><span class="feature-tag" data-i18n="feat.tag4">Speed</span><h2 data-i18n="feat.r4.h">Fast enough for video calls</h2><p data-i18n="feat.r4.p">Premium European servers optimized for low latency to Russia, Iran, and the Middle East. Streaming, video calls, and browsing at full speed.</p></div><div class="feature-visual">⚡</div></div>
-      <div class="feature-row"><div class="feature-text"><span class="feature-tag" data-i18n="feat.tag5">Accessibility</span><h2 data-i18n="feat.r5.h">Multiple ways to connect</h2><p data-i18n="feat.r5.p">Telegram bot, Android app, Web2 site, or TON Web3. If one channel is blocked, others still work.</p></div><div class="feature-visual">📱</div></div>
+      <div class="feat-table-wrap">
+        <table class="feat-table">
+          <thead>
+            <tr>
+              <th class="icon-col"></th>
+              <th></th>
+              <th data-i18n="feat.table.feature">Feature</th>
+              <th data-i18n="feat.table.detail">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feat-icon">🔐</td>
+              <td class="feat-tag-cell"><span class="feat-badge" data-i18n="feat.tag1">Privacy</span></td>
+              <td class="feat-body" colspan="2">
+                <h3 data-i18n="feat.r1.h">Absolute zero logs</h3>
+                <p data-i18n="feat.r1.p">We have no idea who you are, what sites you visit, or when you connect. No email required. No name. No phone number.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="feat-icon">🌐</td>
+              <td class="feat-tag-cell"><span class="feat-badge" data-i18n="feat.tag2">Reliability</span></td>
+              <td class="feat-body" colspan="2">
+                <h3 data-i18n="feat.r2.h">Works where others don't</h3>
+                <p data-i18n="feat.r2.p">Uses advanced obfuscation that disguises traffic as normal web activity. Specifically designed for Iran, Russia, China, and similar environments.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="feat-icon">💎</td>
+              <td class="feat-tag-cell"><span class="feat-badge" data-i18n="feat.tag3">Payments</span></td>
+              <td class="feat-body" colspan="2">
+                <h3 data-i18n="feat.r3.h">Pay without a trace</h3>
+                <p data-i18n="feat.r3.p">TON cryptocurrency only. No bank card. No PayPal. No identity. Payments processed automatically — no human involved.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="feat-icon">⚡</td>
+              <td class="feat-tag-cell"><span class="feat-badge" data-i18n="feat.tag4">Speed</span></td>
+              <td class="feat-body" colspan="2">
+                <h3 data-i18n="feat.r4.h">Fast enough for video calls</h3>
+                <p data-i18n="feat.r4.p">Premium European servers optimized for low latency to Russia, Iran, and the Middle East. Streaming, video calls, and browsing at full speed.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="feat-icon">📱</td>
+              <td class="feat-tag-cell"><span class="feat-badge" data-i18n="feat.tag5">Accessibility</span></td>
+              <td class="feat-body" colspan="2">
+                <h3 data-i18n="feat.r5.h">Multiple ways to connect</h3>
+                <p data-i18n="feat.r5.p">Telegram bot, Android app, Web2 site, or TON Web3. If one channel is blocked, others still work.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="feat-note">
+        <h3 data-i18n="feat.note.h">Designed around one goal</h3>
+        <p data-i18n="feat.note.p1">Every feature exists to serve users in countries where the government actively blocks VPN traffic. Privacy, anonymity, and reliability are not add-ons — they are the product.</p>
+        <p data-i18n="feat.note.p2">If any access channel is blocked, another one works. If the website is unreachable, Telegram and TON Web3 still deliver your config.</p>
+      </div>
     </div>
   </section>
 
