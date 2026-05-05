@@ -1,0 +1,43 @@
+name: Cleanup old deployments
+
+on:
+  workflow_dispatch:
+    inputs:
+      only_remove_deployments:
+        description: 'Only remove deployments (keep environment)'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+      contents: read
+      actions: write
+    steps:
+      - name: Delete deployment environment history
+        uses: strumwolf/delete-deployment-environment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: ${{ inputs.only_remove_deployments }}
+
+      - name: Delete all workflow run history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "Fetching all workflow runs..."
+          PAGE=1
+          while true; do
+            RUN_IDS=$(gh api "/repos/$REPO/actions/runs?per_page=100&page=$PAGE" \
+              --jq '.workflow_runs[].id')
+            [ -z "$RUN_IDS" ] && break
+            for ID in $RUN_IDS; do
+              gh api --method DELETE "/repos/$REPO/actions/runs/$ID" && echo "Deleted run $ID" || true
+            done
+            PAGE=$((PAGE + 1))
+          done
+          echo "All workflow run history cleared."
