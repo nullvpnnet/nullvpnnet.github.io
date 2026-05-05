@@ -9,9 +9,6 @@
   <meta name="description" content="Download the NullVPN Android app — no App Store needed. Works in Russia, Iran, China, and anywhere."/>
   <title>Download NullVPN — Android APK</title>
   <link rel="stylesheet" href="style.css"/>
-  <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "YOUR_CF_BEACON_TOKEN"}'></script>
   <style>
     .download-splash {
       min-height: 80vh;
@@ -56,7 +53,7 @@
             <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
             <button class="lang-btn" onclick="setLang('ar')" title="العربية">ع</button>
             <button class="lang-btn" onclick="setLang('es')" title="Español">ES</button>
-            <button class="lang-btn" onclick="setLang('ne')" title="نेپاली">ने</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
             <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
           </div>
           <div class="theme-toggle">
@@ -141,7 +138,7 @@
       document.getElementById('themeDark').classList.toggle('active', t === 'dark');
     })();
 
-    // Redirect after 1500ms — page renders long enough for CF beacon + CrUX to record
+    // Redirect after 1500ms — page renders long enough for CF RUM (auto-injected at edge) + CrUX to record
     setTimeout(function() {
       window.location.href = 'https://nullvpn.net/app-download';
     }, 1500);
