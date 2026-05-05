@@ -9,8 +9,6 @@
   <meta name="description" content="NullVPN on TON Web3 — accessible even when this website is blocked. No VPN needed."/>
   <title>NullVPN — TON Web3</title>
   <link rel="stylesheet" href="style.css"/>
-  <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CF_BEACON_TOKEN"}'></script>
   <style>
     .web3-splash {
       min-height: 80vh;
@@ -79,7 +77,7 @@
     <div class="container">
       <div class="dl-icon" aria-hidden="true">💎</div>
       <h1 class="dl-title" data-i18n="web3.h1">Opening NullVPN on TON…</h1>
-      <p class="dl-sub" data-i18n="web3.sub">You're being redirected to NullVPN's decentralised Web3 site on the TON Network. Accessible even when this site is blocked.</p>
+      <p class="dl-sub" data-i18n="web3.sub">You’re being redirected to NullVPN’s decentralised Web3 site on the TON Network. Accessible even when this site is blocked.</p>
       <div class="dl-progress" role="status" aria-live="polite">
         <div class="dl-spinner" aria-hidden="true"></div>
         <span data-i18n="web3.redirecting">Connecting to TON…</span>
@@ -98,7 +96,7 @@
         <div class="footer-links-social">
           <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
           <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
-          <a href="web3.html" data-i18n="footer.web3">TON Web3</a>
+          <a href="web3.html">TON Web3</a>
         </div>
       </div>
       <div class="footer-nav">
@@ -140,7 +138,7 @@
       document.getElementById('themeDark').classList.toggle('active', t === 'dark');
     })();
 
-    // Redirect after 1500ms — page renders long enough for CF RUM beacon + CrUX to record
+    // Redirect after 1500ms — page renders long enough for CF RUM (edge-injected) + CrUX to record
     setTimeout(function() {
       window.location.href = 'https://app.ton.domains/nullvpn.ton';
     }, 1500);
