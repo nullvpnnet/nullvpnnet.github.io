@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="description" content="NullVPN pricing — from $5/month. TON crypto payments only. No account required."/>
+  <meta name="description" content="NullVPN pricing — from 299 RUB/month. Card, SBP, or TON. No account required."/>
   <title>Pricing — NullVPN</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
@@ -34,6 +34,7 @@
 .checkout-error-msg{color:#ef4444;text-align:center;margin-bottom:16px}
 .checkout-modal .btn-primary{margin-top:12px;display:block;text-align:center;text-decoration:none}
 .checkout-modal .btn-full{width:100%;box-sizing:border-box}
+.checkout-modal .btn-outline{margin-top:12px;display:block;text-align:center;text-decoration:none}
   </style>
 </head>
 <body>
@@ -86,8 +87,8 @@
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3 data-i18n="price.p1.name">Monthly</h3>
-          <div class="price">$5<span data-i18n="price.permon">/mo</span></div>
-          <p class="price-note" data-i18n="price.p1.note">Billed monthly in TON or USDT</p>
+          <div class="price">299 ₽<span data-i18n="price.permon">/mo</span></div>
+          <p class="price-note" data-i18n="price.p1.note">Card, SBP, or 5 TON</p>
           <ul class="pricing-features">
             <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
             <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
@@ -101,8 +102,8 @@
         <div class="pricing-card featured">
           <div class="popular-badge" data-i18n="price.popular">Most Popular</div>
           <h3 data-i18n="price.p3.name">Quarterly</h3>
-          <div class="price">$12<span data-i18n="price.perqtr">/3 mo</span></div>
-          <p class="price-note" data-i18n="price.p3.note">$4/month — save 20%</p>
+          <div class="price">749 ₽<span data-i18n="price.perqtr">/3 mo</span></div>
+          <p class="price-note" data-i18n="price.p3.note">249 ₽/mo — save 17%</p>
           <ul class="pricing-features">
             <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
             <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
@@ -116,8 +117,8 @@
         </div>
         <div class="pricing-card">
           <h3 data-i18n="price.p4.name">Annual</h3>
-          <div class="price">$40<span data-i18n="price.peryear">/year</span></div>
-          <p class="price-note" data-i18n="price.p4.note">$3.33/month — save 33%</p>
+          <div class="price">2 499 ₽<span data-i18n="price.peryear">/year</span></div>
+          <p class="price-note" data-i18n="price.p4.note">208 ₽/mo — save 30%</p>
           <ul class="pricing-features">
             <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
             <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
@@ -132,7 +133,7 @@
       </div>
       <div class="pricing-note">
         <h3 data-i18n="price.howpay.h">How payment works</h3>
-        <p data-i18n="price.howpay.p1">Choose your plan and pay with TON. Your connection is provisioned automatically within seconds. No wait, no human involved.</p>
+        <p data-i18n="price.howpay.p1">Choose your plan and pay with Russian card, SBP, or TON. Your connection is provisioned automatically within seconds. No wait, no human involved.</p>
         <p data-i18n="price.howpay.p2">No email. No account. No personal information. Fully anonymous.</p>
       </div>
     </div>
@@ -141,7 +142,7 @@
   <section class="cta-banner">
     <div class="container">
       <h2 data-i18n="price.cta.h">Start in 60 seconds</h2>
-      <p data-i18n="price.cta.p">Pay with TON, connect instantly. That's it.</p>
+      <p data-i18n="price.cta.p">Pay with card or TON, connect instantly. That's it.</p>
       <a href="https://nullvpn.net/tg-bot" class="btn-primary btn-large" target="_blank" rel="noopener" data-i18n="price.cta.btn">Or Open Telegram Bot →</a>
     </div>
   </section>
@@ -192,9 +193,24 @@
     <h3 id="checkoutTitle">Checkout</h3>
     <div id="checkoutLoading" class="checkout-loading">
       <div class="checkout-spinner"></div>
-      <p>Creating payment...</p>
+      <p>Preparing payment...</p>
     </div>
+    <!-- Lava (Card/SBP) — Primary -->
+    <div id="checkoutLavaRedirect" style="display:none">
+      <div class="checkout-amount" id="checkoutLavaAmount"></div>
+      <p class="checkout-label" style="text-align:center;margin:16px 0 8px">Pay with Russian card or SBP</p>
+      <a id="checkoutLavaBtn" class="btn-primary btn-full" href="#" target="_blank" rel="noopener">Pay with Card / SBP →</a>
+      <div class="checkout-status" style="margin-top:16px">
+        <div class="checkout-spinner"></div>
+        <p>Waiting for payment confirmation...</p>
+        <p class="checkout-small">Payment ID: <code id="checkoutLavaPid"></code></p>
+      </div>
+      <button class="checkout-fallback" onclick="showTonOption()" style="background:none;border:none;cursor:pointer;color:var(--text-secondary,#666);font-size:.85rem;margin-top:12px;display:block;width:100%;text-align:center">Or pay with TON / USDT →</button>
+      <a href="https://nullvpn.net/tg-bot" class="checkout-fallback" target="_blank" rel="noopener" style="display:block;margin-top:4px">Or pay via Telegram Bot →</a>
+    </div>
+    <!-- TON — Secondary -->
     <div id="checkoutContent" style="display:none">
+      <p class="checkout-label" style="text-align:center;margin-bottom:8px">Pay with TON cryptocurrency</p>
       <div class="checkout-amount" id="checkoutAmount"></div>
       <p class="checkout-label">Send exactly this amount to:</p>
       <div class="checkout-address-row">
@@ -202,14 +218,15 @@
         <button class="checkout-copy-btn" onclick="copyAddress()">Copy</button>
       </div>
       <div class="checkout-qr" id="checkoutQR"></div>
-      <a id="checkoutDeeplink" class="btn-primary btn-full" href="#" target="_blank">Open in TON Wallet</a>
+      <a id="checkoutDeeplink" class="btn-outline btn-full" href="#" target="_blank" rel="noopener">Open in TON Wallet</a>
       <div id="checkoutStatus" class="checkout-status">
         <div class="checkout-spinner"></div>
         <p>Waiting for payment confirmation...</p>
         <p class="checkout-small">Payment ID: <code id="checkoutPaymentId"></code></p>
       </div>
-      <a href="https://nullvpn.net/tg-bot" class="checkout-fallback" target="_blank" rel="noopener">Or pay via Telegram Bot →</a>
+      <a href="https://nullvpn.net/tg-bot" class="checkout-fallback" target="_blank" rel="noopener" style="display:block;margin-top:12px">Or pay via Telegram Bot →</a>
     </div>
+    <!-- Error -->
     <div id="checkoutError" style="display:none">
       <p class="checkout-error-msg" id="checkoutErrorMsg"></p>
       <a href="https://nullvpn.net/tg-bot" class="btn-primary btn-full" target="_blank" rel="noopener">Pay via Telegram Bot →</a>
@@ -219,24 +236,51 @@
 
 <script>
 (function(){
-  const API_BASE='https://api.nullvpn.net';
-  const PLANS={monthly:{label:'Monthly',price:'$5',ton:5},quarterly:{label:'Quarterly',price:'$12',ton:12},annual:{label:'Annual',price:'$40',ton:40}};
-  let pollTimer=null;
+  var API_BASE='https://api.nullvpn.net';
+  var PLANS={monthly:{label:'Monthly',price:'299 ₽',ton:5},quarterly:{label:'Quarterly',price:'749 ₽',ton:12},annual:{label:'Annual',price:'2 499 ₽',ton:40}};
+  var pollTimer=null;
 
   window.openCheckout=function(plan){
-    const p=PLANS[plan];if(!p)return;
+    var p=PLANS[plan];if(!p)return;
     document.getElementById('checkoutModal').style.display='flex';
     document.getElementById('checkoutTitle').textContent=p.label+' Plan';
     document.getElementById('checkoutLoading').style.display='block';
     document.getElementById('checkoutContent').style.display='none';
+    document.getElementById('checkoutLavaRedirect').style.display='none';
     document.getElementById('checkoutError').style.display='none';
     if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
 
+    // Try Lava (card/SBP) first
+    fetch(API_BASE+'/payments/web/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'lava'})})
+    .then(function(r){return r.json().then(function(d){return {status:r.status,data:d};});})
+    .then(function(result){
+      if(result.status===201 && result.data.success && result.data.data.payment_url){
+        // Lava available — redirect to payment page
+        document.getElementById('checkoutLoading').style.display='none';
+        document.getElementById('checkoutLavaRedirect').style.display='block';
+        document.getElementById('checkoutLavaAmount').textContent=p.price;
+        document.getElementById('checkoutLavaBtn').href=result.data.data.payment_url;
+        // Store payment_id for polling
+        var pid=result.data.data.payment_id;
+        document.getElementById('checkoutLavaPid').textContent=pid;
+        pollTimer=setInterval(function(){pollStatus(pid,plan);},5000);
+      } else {
+        // Lava not available — fall back to TON
+        showTonCheckout(plan,p);
+      }
+    })
+    .catch(function(){
+      showTonCheckout(plan,p);
+    });
+  };
+
+  function showTonCheckout(plan,p){
+    document.getElementById('checkoutLoading').style.display='none';
+    document.getElementById('checkoutLavaRedirect').style.display='none';
     fetch(API_BASE+'/payments/web/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'ton'})})
     .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(data){
       if(!data.success)throw new Error(data.error||'Unknown error');
-      document.getElementById('checkoutLoading').style.display='none';
       document.getElementById('checkoutContent').style.display='block';
       var d=data.data;
       document.getElementById('checkoutAmount').textContent=d.amount+' TON';
@@ -247,10 +291,18 @@
       pollTimer=setInterval(function(){pollStatus(d.payment_id,plan);},5000);
     })
     .catch(function(err){
-      document.getElementById('checkoutLoading').style.display='none';
       document.getElementById('checkoutError').style.display='block';
       document.getElementById('checkoutErrorMsg').textContent='Could not create payment: '+err.message;
     });
+  }
+
+  // Also add a global function to switch to TON from Lava redirect view
+  window.showTonOption=function(){
+    var title=document.getElementById('checkoutTitle').textContent;
+    var plan='monthly';
+    if(title.indexOf('Quarterly')>=0)plan='quarterly';
+    if(title.indexOf('Annual')>=0)plan='annual';
+    showTonCheckout(plan,PLANS[plan]);
   };
 
   function pollStatus(pid,plan){
