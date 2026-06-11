@@ -251,7 +251,7 @@
     if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
 
     // Try Lava (card/SBP) first
-    fetch(API_BASE+'/payments/web/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'lava'})})
+    fetch(API_BASE+'/api/v1/payments/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'lava'})})
     .then(function(r){return r.json().then(function(d){return {status:r.status,data:d};});})
     .then(function(result){
       if(result.status===201 && result.data.success && result.data.data.payment_url){
@@ -277,7 +277,7 @@
   function showTonCheckout(plan,p){
     document.getElementById('checkoutLoading').style.display='none';
     document.getElementById('checkoutLavaRedirect').style.display='none';
-    fetch(API_BASE+'/payments/web/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'ton'})})
+    fetch(API_BASE+'/api/v1/payments/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'ton'})})
     .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(data){
       if(!data.success)throw new Error(data.error||'Unknown error');
@@ -306,7 +306,7 @@
   };
 
   function pollStatus(pid,plan){
-    fetch(API_BASE+'/payments/web/status/'+pid)
+    fetch(API_BASE+'/api/v1/payments/status/'+pid)
     .then(function(r){return r.json();})
     .then(function(data){
       if(data.success&&data.data&&data.data.status==='confirmed'){
