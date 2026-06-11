@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Payment Successful — NullVPN</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .success-section{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:40px 16px}
+    .success-card{text-align:center;max-width:480px;width:100%}
+    .success-icon{width:80px;height:80px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:40px;color:#fff}
+    .success-card h1{font-size:2rem;margin:0 0 8px;color:var(--text-primary,#111)}
+    .success-card .subtitle{color:var(--text-secondary,#666);font-size:1.1rem;margin-bottom:32px}
+    .success-details{background:var(--card-bg,#fff);border:1px solid var(--border,#e5e7eb);border-radius:12px;padding:24px;margin-bottom:32px;text-align:left}
+    .success-details .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border,#e5e7eb)}
+    .success-details .row:last-child{border-bottom:none}
+    .success-details .row .label{color:var(--text-secondary,#666);font-size:.9rem}
+    .success-details .row .value{font-weight:600;color:var(--text-primary,#111);font-size:.9rem}
+    .success-card .btn-primary{display:inline-block;text-decoration:none;margin-right:12px}
+    .success-card .btn-outline{display:inline-block;text-decoration:none}
+    .success-note{color:var(--text-secondary,#666);font-size:.85rem;margin-top:24px;line-height:1.6}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-top-row">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <div class="nav-actions">
+          <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.download">Download App</a>
+          <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" class="btn-nav-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+        </div>
+        <div class="nav-controls">
+          <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
+            <button class="lang-btn" onclick="setLang('ar')" title="العربية">ع</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Español">ES</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
+          </div>
+          <div class="theme-toggle">
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">🌙</button>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="success-section">
+    <div class="container">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Payment Successful!</h1>
+        <p class="subtitle">Your premium access is now active.</p>
+        <div class="success-details">
+          <div class="row">
+            <span class="label">Plan</span>
+            <span class="value" id="successPlan">—</span>
+          </div>
+          <div class="row">
+            <span class="label">Status</span>
+            <span class="value" style="color:#10b981">Active</span>
+          </div>
+          <div class="row">
+            <span class="label">Payment ID</span>
+            <span class="value" id="successPaymentId" style="font-size:.8rem;font-family:monospace">—</span>
+          </div>
+        </div>
+        <a href="https://nullvpn.net/app-download" class="btn-primary btn-large" target="_blank" rel="noopener">Download App</a>
+        <a href="pricing.html" class="btn-outline btn-large">Back to Pricing</a>
+        <p class="success-note">Open the NullVPN app and log in to activate your premium subscription. If you already have the app, your premium will activate automatically on next launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
+        <div class="footer-links-social">
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="https://nullvpn.net/tg-bot" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+          <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p></div>
+  </footer>
+
+  <script src="i18n.js?v=2"></script>
+  <script>
+    function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');}
+    (function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');})();
+    (function(){
+      var params=new URLSearchParams(window.location.search);
+      var planMap={monthly:'Monthly (30 days)',quarterly:'Quarterly (90 days)',annual:'Annual (365 days)'};
+      var plan=params.get('plan')||'';
+      var pid=params.get('payment_id')||'—';
+      document.getElementById('successPlan').textContent=planMap[plan]||plan||'—';
+      document.getElementById('successPaymentId').textContent=pid;
+    })();
+  </script>
+</body>
+</html>
