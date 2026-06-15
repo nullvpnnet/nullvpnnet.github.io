@@ -4,35 +4,21 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="description" content="Download the NullVPN Android app — no App Store needed. Works in Russia, Iran, China, and anywhere."/>
-  <title>Download NullVPN — Android APK</title>
+  <meta name="description" content="NullVPN — coming soon."/>
+  <title>NullVPN — Coming Soon</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .download-splash {
+    .coming-soon {
       min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
     }
-    .download-splash .container { max-width: 560px; }
-    .dl-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .dl-title { font-size: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
-    .dl-sub { color: var(--color-text-muted, #666); margin-bottom: 1.5rem; max-width: 42ch; margin-left: auto; margin-right: auto; }
-    .dl-progress { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-text-muted, #666); font-size: 0.875rem; margin-bottom: 2rem; }
-    .dl-spinner {
-      width: 18px; height: 18px;
-      border: 2px solid var(--color-border, #ddd);
-      border-top-color: var(--color-primary, #01696f);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .dl-manual { font-size: 0.875rem; color: var(--color-text-muted, #666); }
-    .dl-manual a { color: var(--color-primary, #01696f); text-decoration: underline; }
-    @media (prefers-reduced-motion: reduce) { .dl-spinner { animation: none; } }
+    .coming-soon .container { max-width: 560px; }
+    .cs-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .cs-title { font-size: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
+    .cs-sub { color: var(--color-text-muted, #666); margin-bottom: 2rem; max-width: 42ch; margin-left: auto; margin-right: auto; line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -49,16 +35,16 @@
         <div class="nav-controls">
           <div class="lang-selector">
             <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
-            <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
-            <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
-            <button class="lang-btn" onclick="setLang('ar')" title="العربية">ع</button>
-            <button class="lang-btn" onclick="setLang('es')" title="Español">ES</button>
-            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
-            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;">&#1056;&#1059;</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="&#1601;&#1575;&#1585;&#1587;&#1740;">&#1601;&#1575;</button>
+            <button class="lang-btn" onclick="setLang('ar')" title="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;">&#1593;</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Espa&ntilde;ol">ES</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;">&#2344;&#2375;</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="&#20013;&#25991;">&#20013;</button>
           </div>
           <div class="theme-toggle">
-            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
-            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">🌙</button>
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">&#9728;&#65039;</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">&#127769;</button>
           </div>
         </div>
       </div>
@@ -73,18 +59,11 @@
     </div>
   </nav>
 
-  <section class="download-splash">
+  <section class="coming-soon">
     <div class="container">
-      <div class="dl-icon" aria-hidden="true">📲</div>
-      <h1 class="dl-title" data-i18n="download.h1">Downloading NullVPN…</h1>
-      <p class="dl-sub" data-i18n="download.sub">Your APK download is starting. No App Store required. Works in Russia, Iran, China, and anywhere.</p>
-      <div class="dl-progress" role="status" aria-live="polite">
-        <div class="dl-spinner" aria-hidden="true"></div>
-        <span data-i18n="download.redirecting">Preparing your download…</span>
-      </div>
-      <p class="dl-manual" data-i18n="download.manual">
-        Download not starting? <a href="https://nullvpn.net/app-download" id="dl-link" target="_blank" rel="noopener">Click here</a>
-      </p>
+      <div class="cs-icon" aria-hidden="true">&#128274;</div>
+      <h1 class="cs-title">Coming Soon</h1>
+      <p class="cs-sub">NullVPN is not available for download yet. Stay tuned for updates.</p>
     </div>
   </section>
 
@@ -119,7 +98,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p>
+      <p data-i18n="footer.copy">&copy; 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p>
     </div>
   </footer>
 
@@ -137,11 +116,6 @@
       document.getElementById('themeLight').classList.toggle('active', t === 'light');
       document.getElementById('themeDark').classList.toggle('active', t === 'dark');
     })();
-
-    // Redirect after 1500ms — page renders long enough for CF RUM (auto-injected at edge) + CrUX to record
-    setTimeout(function() {
-      window.location.href = 'https://nullvpn.net/app-download';
-    }, 1500);
   </script>
 
 </body>
