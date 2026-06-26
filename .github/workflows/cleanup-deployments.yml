@@ -11,6 +11,7 @@ on:
 
 jobs:
   cleanup:
+    # Utility workflow — runs on GitHub-hosted runner (no prod/test env dependency)
     runs-on: ubuntu-latest
     permissions:
       deployments: write
