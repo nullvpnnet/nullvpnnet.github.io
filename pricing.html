@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="NullVPN pricing — from 299 RUB/month. Card, SBP, or TON. No account required."/>
+  <title>Pricing — NullVPN</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+.checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px}
+.checkout-modal{background:var(--card-bg,#fff);border-radius:16px;padding:32px;max-width:420px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);color:var(--text-primary,#111)}
+.checkout-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--text-secondary,#666);line-height:1}
+.checkout-close:hover{color:var(--text-primary,#111)}
+.checkout-modal h3{margin:0 0 20px;font-size:1.4rem;color:var(--text-primary,#111)}
+.checkout-loading,.checkout-status{text-align:center;padding:20px 0}
+.checkout-spinner{width:36px;height:36px;border:3px solid var(--border,#e5e7eb);border-top-color:#10b981;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.checkout-amount{font-size:2rem;font-weight:800;color:#10b981;text-align:center;margin-bottom:4px}
+.checkout-label{color:var(--text-secondary,#666);font-size:.9rem;margin:16px 0 8px;text-align:center}
+.checkout-address-row{display:flex;gap:8px;align-items:center;margin-bottom:16px}
+.checkout-address{flex:1;font-size:.75rem;padding:10px 12px;background:var(--bg,#f9fafb);border:1px solid var(--border,#e5e7eb);border-radius:8px;word-break:break-all;color:var(--text-primary,#111)}
+.checkout-copy-btn{white-space:nowrap;padding:10px 16px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600}
+.checkout-copy-btn:hover{background:#059669}
+.checkout-qr{text-align:center;margin:16px 0}
+.checkout-qr img{border-radius:12px;border:4px solid var(--border,#e5e7eb)}
+.checkout-status{margin-top:16px;padding:16px;background:var(--bg,#f9fafb);border-radius:12px}
+.checkout-small{font-size:.75rem;color:var(--text-secondary,#666);margin-top:8px}
+.checkout-small code{background:var(--bg,#f9fafb);padding:2px 6px;border-radius:4px;font-size:.7rem}
+.checkout-fallback{display:block;text-align:center;margin-top:16px;color:var(--text-secondary,#666);font-size:.85rem}
+.checkout-fallback:hover{color:#10b981}
+.checkout-error-msg{color:#ef4444;text-align:center;margin-bottom:16px}
+.checkout-modal .btn-primary{margin-top:12px;display:block;text-align:center;text-decoration:none}
+.checkout-modal .btn-full{width:100%;box-sizing:border-box}
+.checkout-modal .btn-outline{margin-top:12px;display:block;text-align:center;text-decoration:none}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-top-row">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <div class="nav-actions">
+          <a href="https://nullvpn.net/app-download" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.download">Download App</a>
+          <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="pricing.html" class="btn-nav-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+        </div>
+        <div class="nav-controls">
+          <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="Русский">РУ</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="فارسی">فا</button>
+            <button class="lang-btn" onclick="setLang('ar')" title="العربية">ع</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Español">ES</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="中文">中</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="नेपाली">ने</button>
+          </div>
+          <div class="theme-toggle">
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">☀️</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">🌙</button>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" class="active" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-i18n="price.h1a">Simple pricing.</span><br/><span data-i18n="price.h1b">No surprises.</span></h1>
+      <p data-i18n="price.sub">Pay once. Get instant access. No subscription traps. No identity required.</p>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:32px;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700" data-i18n="price.h">Choose your plan</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 data-i18n="price.p1.name">Monthly</h3>
+          <div class="price">299 ₽<span data-i18n="price.permon">/mo</span></div>
+          <p class="price-note" data-i18n="price.p1.note">Card, SBP, or 5 TON</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+          </ul>
+          <button class="btn-outline btn-full" onclick="openCheckout('monthly')">Get Premium →</button>
+        </div>
+        <div class="pricing-card featured">
+          <div class="popular-badge" data-i18n="price.popular">Most Popular</div>
+          <h3 data-i18n="price.p3.name">Quarterly</h3>
+          <div class="price">749 ₽<span data-i18n="price.perqtr">/3 mo</span></div>
+          <p class="price-note" data-i18n="price.p3.note">249 ₽/mo — save 17%</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+            <li data-i18n="price.feat.7">✔ Priority Telegram support</li>
+          </ul>
+          <button class="btn-primary btn-full" onclick="openCheckout('quarterly')">Get Premium →</button>
+        </div>
+        <div class="pricing-card">
+          <h3 data-i18n="price.p4.name">Annual</h3>
+          <div class="price">2 499 ₽<span data-i18n="price.peryear">/year</span></div>
+          <p class="price-note" data-i18n="price.p4.note">208 ₽/mo — save 30%</p>
+          <ul class="pricing-features">
+            <li data-i18n="price.feat.1">✔ 1 device (Android)</li>
+            <li data-i18n="price.feat.2">✔ Unlimited bandwidth</li>
+            <li data-i18n="price.feat.3">✔ Premium European server</li>
+            <li data-i18n="price.feat.4">✔ Works in Iran, Russia, China</li>
+            <li data-i18n="price.feat.5">✔ Auto-provisioned instantly</li>
+            <li data-i18n="price.feat.6">✔ Zero logs by architecture</li>
+            <li data-i18n="price.feat.7">✔ Priority Telegram support</li>
+          </ul>
+          <button class="btn-outline btn-full" onclick="openCheckout('annual')">Get Premium →</button>
+        </div>
+      </div>
+      <div class="pricing-note">
+        <h3 data-i18n="price.howpay.h">How payment works</h3>
+        <p data-i18n="price.howpay.p1">Choose your plan and pay with Russian card, SBP, or TON. Your connection is provisioned automatically within seconds. No wait, no human involved.</p>
+        <p data-i18n="price.howpay.p2">No email. No account. No personal information. Fully anonymous.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2 data-i18n="price.cta.h">Start in 60 seconds</h2>
+      <p data-i18n="price.cta.p">Pay with card or TON, connect instantly. That's it.</p>
+      <a href="#pricing" class="btn-primary btn-large" target="_blank" rel="noopener" data-i18n="price.cta.btn">View Plans →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
+        <div class="footer-links-social">
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="pricing.html" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+          <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p></div>
+  </footer>
+
+  <script src="i18n.js?v=2"></script>
+  <script>
+    function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');}
+    (function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);document.getElementById('themeLight').classList.toggle('active',t==='light');document.getElementById('themeDark').classList.toggle('active',t==='dark');})();
+  </script>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="checkout-overlay" style="display:none">
+  <div class="checkout-modal">
+    <button class="checkout-close" onclick="closeCheckout()">&times;</button>
+    <h3 id="checkoutTitle">Checkout</h3>
+    <div id="checkoutLoading" class="checkout-loading">
+      <div class="checkout-spinner"></div>
+      <p>Preparing payment...</p>
+    </div>
+    <!-- Lava (Card/SBP) — Primary -->
+    <div id="checkoutLavaRedirect" style="display:none">
+      <div class="checkout-amount" id="checkoutLavaAmount"></div>
+      <p class="checkout-label" style="text-align:center;margin:16px 0 8px">Pay with Russian card or SBP</p>
+      <a id="checkoutLavaBtn" class="btn-primary btn-full" href="#" target="_blank" rel="noopener">Pay with Card / SBP →</a>
+      <div class="checkout-status" style="margin-top:16px">
+        <div class="checkout-spinner"></div>
+        <p>Waiting for payment confirmation...</p>
+        <p class="checkout-small">Payment ID: <code id="checkoutLavaPid"></code></p>
+      </div>
+      <button class="checkout-fallback" onclick="showTonOption()" style="background:none;border:none;cursor:pointer;color:var(--text-secondary,#666);font-size:.85rem;margin-top:12px;display:block;width:100%;text-align:center">Or pay with TON / USDT →</button>
+      <a href="https://nullvpn.net/tg-bot" class="checkout-fallback" target="_blank" rel="noopener" style="display:block;margin-top:4px">Or pay via Telegram Bot →</a>
+    </div>
+    <!-- TON — Secondary -->
+    <div id="checkoutContent" style="display:none">
+      <p class="checkout-label" style="text-align:center;margin-bottom:8px">Pay with TON cryptocurrency</p>
+      <div class="checkout-amount" id="checkoutAmount"></div>
+      <p class="checkout-label">Send exactly this amount to:</p>
+      <div class="checkout-address-row">
+        <code id="checkoutAddress" class="checkout-address"></code>
+        <button class="checkout-copy-btn" onclick="copyAddress()">Copy</button>
+      </div>
+      <div class="checkout-qr" id="checkoutQR"></div>
+      <a id="checkoutDeeplink" class="btn-outline btn-full" href="#" target="_blank" rel="noopener">Open in TON Wallet</a>
+      <div id="checkoutStatus" class="checkout-status">
+        <div class="checkout-spinner"></div>
+        <p>Waiting for payment confirmation...</p>
+        <p class="checkout-small">Payment ID: <code id="checkoutPaymentId"></code></p>
+      </div>
+      <a href="https://nullvpn.net/tg-bot" class="checkout-fallback" target="_blank" rel="noopener" style="display:block;margin-top:12px">Or pay via Telegram Bot →</a>
+    </div>
+    <!-- Error -->
+    <div id="checkoutError" style="display:none">
+      <p class="checkout-error-msg" id="checkoutErrorMsg"></p>
+      <a href="https://nullvpn.net/tg-bot" class="btn-primary btn-full" target="_blank" rel="noopener">Pay via Telegram Bot →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var API_BASE='https://api.nullvpn.net';
+  var PLANS={monthly:{label:'Monthly',price:'299 ₽',ton:5},quarterly:{label:'Quarterly',price:'749 ₽',ton:12},annual:{label:'Annual',price:'2 499 ₽',ton:40}};
+  var pollTimer=null;
+
+  window.openCheckout=function(plan){
+    var p=PLANS[plan];if(!p)return;
+    document.getElementById('checkoutModal').style.display='flex';
+    document.getElementById('checkoutTitle').textContent=p.label+' Plan';
+    document.getElementById('checkoutLoading').style.display='block';
+    document.getElementById('checkoutContent').style.display='none';
+    document.getElementById('checkoutLavaRedirect').style.display='none';
+    document.getElementById('checkoutError').style.display='none';
+    if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
+
+    // Try Lava (card/SBP) first
+    fetch(API_BASE+'/api/v1/payments/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'lava'})})
+    .then(function(r){return r.json().then(function(d){return {status:r.status,data:d};});})
+    .then(function(result){
+      if(result.status===201 && result.data.success && result.data.data.payment_url){
+        // Lava available — redirect to payment page
+        document.getElementById('checkoutLoading').style.display='none';
+        document.getElementById('checkoutLavaRedirect').style.display='block';
+        document.getElementById('checkoutLavaAmount').textContent=p.price;
+        document.getElementById('checkoutLavaBtn').href=result.data.data.payment_url;
+        // Store payment_id for polling
+        var pid=result.data.data.payment_id;
+        document.getElementById('checkoutLavaPid').textContent=pid;
+        pollTimer=setInterval(function(){pollStatus(pid,plan);},5000);
+      } else {
+        // Lava not available — fall back to TON
+        showTonCheckout(plan,p);
+      }
+    })
+    .catch(function(){
+      showTonCheckout(plan,p);
+    });
+  };
+
+  function showTonCheckout(plan,p){
+    document.getElementById('checkoutLoading').style.display='none';
+    document.getElementById('checkoutLavaRedirect').style.display='none';
+    fetch(API_BASE+'/api/v1/payments/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan,provider:'ton'})})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(data){
+      if(!data.success)throw new Error(data.error||'Unknown error');
+      document.getElementById('checkoutContent').style.display='block';
+      var d=data.data;
+      document.getElementById('checkoutAmount').textContent=d.amount+' TON';
+      document.getElementById('checkoutAddress').textContent=d.address;
+      document.getElementById('checkoutDeeplink').href=d.ton_deeplink;
+      document.getElementById('checkoutPaymentId').textContent=d.payment_id;
+      document.getElementById('checkoutQR').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(d.ton_deeplink)+'" alt="QR Code" width="200" height="200"/>';
+      pollTimer=setInterval(function(){pollStatus(d.payment_id,plan);},5000);
+    })
+    .catch(function(err){
+      document.getElementById('checkoutError').style.display='block';
+      document.getElementById('checkoutErrorMsg').textContent='Could not create payment: '+err.message;
+    });
+  }
+
+  // Also add a global function to switch to TON from Lava redirect view
+  window.showTonOption=function(){
+    var title=document.getElementById('checkoutTitle').textContent;
+    var plan='monthly';
+    if(title.indexOf('Quarterly')>=0)plan='quarterly';
+    if(title.indexOf('Annual')>=0)plan='annual';
+    showTonCheckout(plan,PLANS[plan]);
+  };
+
+  function pollStatus(pid,plan){
+    fetch(API_BASE+'/api/v1/payments/status/'+pid)
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(data.success&&data.data&&data.data.status==='confirmed'){
+        if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
+        window.location.href='success.html?plan='+plan+'&payment_id='+pid;
+      }
+    })
+    .catch(function(){});
+  }
+
+  window.copyAddress=function(){
+    var addr=document.getElementById('checkoutAddress').textContent;
+    navigator.clipboard.writeText(addr).then(function(){
+      var btn=document.querySelector('.checkout-copy-btn');
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy';},2000);
+    });
+  };
+
+  window.closeCheckout=function(){
+    document.getElementById('checkoutModal').style.display='none';
+    if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
+  };
+
+  document.getElementById('checkoutModal').addEventListener('click',function(e){
+    if(e.target===this)closeCheckout();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="NullVPN — coming soon."/>
+  <title>NullVPN — Coming Soon</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .coming-soon {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .coming-soon .container { max-width: 560px; }
+    .cs-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .cs-title { font-size: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
+    .cs-sub { color: var(--color-text-muted, #666); margin-bottom: 2rem; max-width: 42ch; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-top-row">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <div class="nav-actions">
+          <a href="download.html" class="btn-nav active" data-i18n="nav.download">Download App</a>
+          <a href="https://nullvpn.net/tg-channel" class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="pricing.html" class="btn-nav btn-nav-primary" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+        </div>
+        <div class="nav-controls">
+          <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('en')" title="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ru')" title="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;">&#1056;&#1059;</button>
+            <button class="lang-btn" onclick="setLang('fa')" title="&#1601;&#1575;&#1585;&#1587;&#1740;">&#1601;&#1575;</button>
+            <button class="lang-btn" onclick="setLang('ar')" title="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;">&#1593;</button>
+            <button class="lang-btn" onclick="setLang('es')" title="Espa&ntilde;ol">ES</button>
+            <button class="lang-btn" onclick="setLang('ne')" title="&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;">&#2344;&#2375;</button>
+            <button class="lang-btn" onclick="setLang('zh')" title="&#20013;&#25991;">&#20013;</button>
+          </div>
+          <div class="theme-toggle">
+            <button class="theme-btn" id="themeLight" onclick="setTheme('light')" aria-label="Light mode">&#9728;&#65039;</button>
+            <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">&#127769;</button>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+        <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="coming-soon">
+    <div class="container">
+      <div class="cs-icon" aria-hidden="true">&#128274;</div>
+      <h1 class="cs-title">Coming Soon</h1>
+      <p class="cs-sub">NullVPN is not available for download yet. Stay tuned for updates.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Null<span>VPN</span></a>
+        <p data-i18n="footer.tagline">Private internet for everyone, everywhere.</p>
+        <div class="footer-links-social">
+          <a href="https://nullvpn.net/tg-channel" target="_blank" rel="noopener" data-i18n="nav.contact">Contact</a>
+          <a href="pricing.html" target="_blank" rel="noopener" data-i18n="nav.cta.buy">Buy Premium</a>
+          <a href="https://nullvpn.net/web3" target="_blank" rel="noopener">TON Web3</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.pages">Pages</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="how-it-works.html" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="comparison.html" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">&copy; 2026 NullVPN. Available on Web2, TON Web3, and all HTTP networks.</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js?v=3"></script>
+  <script>
+    function setTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      document.getElementById('themeLight').classList.toggle('active', t === 'light');
+      document.getElementById('themeDark').classList.toggle('active', t === 'dark');
+    }
+    (function() {
+      var t = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      document.getElementById('themeLight').classList.toggle('active', t === 'light');
+      document.getElementById('themeDark').classList.toggle('active', t === 'dark');
+    })();
+  </script>
+
+</body>
+</html>
